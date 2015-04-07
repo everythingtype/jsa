@@ -1,0 +1,40 @@
+/*
+Theme Name: Joel Sanders Architect
+Theme URI: http://github.com/everythingtype/jsa
+Author: Spellerberg Associates
+Author URI: http://www.spellerbergassociates.com/
+
+Designed by Everything Type Company, http://www.etc-nyc.com/
+Developed by Spellerberg Associates, http://www.spellerbergassociates.com/
+
+*/
+
+body { font-family: "Executive", sans-serif; font-weight: 400; font-size: 18px; margin: 0; padding: 0; }
+
+a { color: #999999; text-decoration: none; }
+a:hover { color: #000; }
+
+h2 { font-weight: 400; font-size: 18px; margin: 0; padding: 9px 0 0 0; }
+
+img { width: 100%; }
+
+.grid { padding: 90px;}
+
+.item { width: 25%; float: left; box-sizing: border-box;  }
+.item .padding { position: relative; }
+.item .ratio { padding-top: 100%; }
+.item .inner { position: absolute; top: 0; bottom: 0; left: 0; right: 0; }
+.item a { display: block; padding: 5px 15px; }
+
+.item .thumbnail { position: relative; }
+.item .thumbnail .pattern { position: absolute; top: 0; bottom: 0; left: 0; right: 0; background-size: 39px 39px; display: none; } /*285px 180px*/
+.hover .thumbnail .pattern { display: block; }
+
+.page-id-29 .pattern { background: url('images/pattern1.png') center center; }
+.page-id-32 .pattern { background: url('images/pattern1.png') center center; }
+.page-id-34 .pattern { background: url('images/pattern2.png') center center; }
+.page-id-36 .pattern { background: url('images/pattern2.png') center center; }
+.page-id-38 .pattern { background: url('images/pattern3.png') center center; }
+.page-id-40 .pattern { background: url('images/pattern3.png') center center; }
+.page-id-42 .pattern { background: url('images/pattern4.png') center center; }
+.page-id-44 .pattern { background: url('images/pattern4.png') center center; }
