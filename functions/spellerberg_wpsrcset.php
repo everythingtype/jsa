@@ -1,6 +1,6 @@
 <?php
 
-// Version: 2015.04.03
+// Version: 2015.04.07
 
 // The why: http://ericportis.com/posts/2014/srcset-sizes/
 // The how: https://mattwilcox.net/web-development/keeping-srcset-and-sizes-under-control
@@ -77,7 +77,7 @@ function spellerberg_sizesattr($imageid,$fallbacksize) {
 
 function spellerberg_srcsetattr( $imageid, $fallbacksize) {
 
-	$output == '';
+	$output = '';
 
 	$sizes = spellerberg_size_set($fallbacksize);
 
