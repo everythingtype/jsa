@@ -1,0 +1,27 @@
+.main-navigation {
+	font-size: 20px;
+}
+.main-navigation a {
+	text-decoration: none;
+}
+.main-navigation ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.main-navigation ul li {
+	display: inline-block;
+}
+.nav-work {
+	float: left;
+	text-transform: uppercase;
+}
+.nav-work li {
+	margin-right: 10px;
+}
+.nav-company {
+	float: right;
+}
+.nav-company li {
+	margin-left: 10px;
+}

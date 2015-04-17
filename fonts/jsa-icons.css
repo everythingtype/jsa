@@ -1,0 +1,119 @@
+@font-face {
+	font-family: 'jsa-icons';
+	src:url('jsa-icons.eot?v1');
+	src:url('jsa-icons.eot?#v1') format('embedded-opentype'),
+		url('jsa-icons.woff?v1') format('woff'),
+		url('jsa-icons.ttf?v1') format('truetype'),
+		url('jsa-icons.svg?v1#jsa') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="jsa-icon-"], [class*=" jsa-icon-"] {
+	font-family: 'jsa-icons';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.jsa-icon-search:before {
+	content: "\f002";
+}
+.jsa-icon-search-plus:before {
+	content: "\f00e";
+}
+.jsa-icon-search-minus:before {
+	content: "\f010";
+}
+.jsa-icon-tags:before {
+	content: "\f02c";
+}
+.jsa-icon-pencil:before {
+	content: "\f040";
+}
+.jsa-icon-folder-open:before {
+	content: "\f07c";
+}
+.jsa-icon-twitter:before {
+	content: "\f099";
+}
+.jsa-icon-facebook:before {
+	content: "\f09a";
+}
+.jsa-icon-github:before {
+	content: "\f09b";
+}
+.jsa-icon-navicon:before {
+	content: "\f0c9";
+}
+.jsa-icon-pinterest:before {
+	content: "\f0d2";
+}
+.jsa-icon-google-plus:before {
+	content: "\f0d5";
+}
+.jsa-icon-linkedin:before {
+	content: "\f0e1";
+}
+.jsa-icon-mail-reply:before {
+	content: "\f112";
+}
+.jsa-icon-pencil-square:before {
+	content: "\f14b";
+}
+.jsa-icon-instagram:before {
+	content: "\f16d";
+}
+.jsa-icon-flickr:before {
+	content: "\f16e";
+}
+.jsa-icon-tumblr:before {
+	content: "\f173";
+}
+.jsa-icon-dribbble:before {
+	content: "\f17d";
+}
+.jsa-icon-skype:before {
+	content: "\f17e";
+}
+.jsa-icon-vimeo-square:before {
+	content: "\f194";
+}
+.jsa-icon-wordpress:before {
+	content: "\f19a";
+}
+.jsa-icon-behance:before {
+	content: "\f1b4";
+}
+.jsa-icon-spotify:before {
+	content: "\f1bc";
+}
+.jsa-icon-link:before {
+	content: "\f0c1";
+}
+.jsa-icon-caret-down:before {
+	content: "\f0d7";
+}
+.jsa-icon-user:before {
+	content: "\f007";
+}
+.jsa-icon-clock:before {
+	content: "\f017";
+}
+.jsa-icon-tag:before {
+	content: "\f02b";
+}
+.jsa-icon-comments:before {
+	content: "\f086";
+}
+.icon-chevron-left:before {
+	content: "\f053";
+}
+.icon-chevron-right:before {
+	content: "\f054";
+}
