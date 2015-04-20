@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying the front page.
+ * Template Name: Home
  *
  * @package JSA
  */
@@ -8,7 +8,14 @@
 get_header(); ?>
 
 	<div class="main-gallery js-flickity" data-flickity-options='{ "imagesLoaded": true, "percentPosition": false, "pageDots": false, "wrapAround": true }'>
-		<?php get_template_part( 'partials/projects', 'gallery' ); ?>
+		<?php while ( have_rows('carousel') ) : the_row(); ?>
+		<div class="gallery-cell">
+			<div class="project">
+				<?php echo wp_get_attachment_image( get_sub_field( 'image' ), 'jsa-large-crop' ); ?>
+				<h3><span><?php echo get_sub_field( 'heading' ); ?></span></h3>
+			</div>
+		</div>
+		<?php endwhile; ?>
 	</div>
 
 	<div class="col-width">

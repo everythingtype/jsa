@@ -60,6 +60,7 @@ http://flickity.metafizzy.co
 	-webkit-transform:translateY(-50%);
 	-ms-transform:translateY(-50%);
 	transform:translateY(-50%);
+	margin: 0;
 }
 
 .flickity-prev-next-button:hover {
@@ -159,14 +160,37 @@ http://flickity.metafizzy.co
 /* Home Page
 ---------------------------------------------- */
 
-.flickity-slider .project {
+.main-gallery .gallery-cell {
+	width: 100%;
+}
+.main-gallery .project {
 	position: relative;
 }
-.flickity-slider .project h3 {
+.main-gallery .project img {
+	width: 100%;
+}
+.main-gallery .project h3 {
 	position: absolute;
 	color: #fff;
 	font-weight: 600;
 	font-size: 64px;
-	bottom: 20px;
-	left: 20px;
+	bottom: 40px;
+	width: 100%;
+	margin-bottom: 0;
+	line-height: 1;
+}
+.main-gallery .project h3 span {
+	max-width: 1020px;
+	display: block;
+	margin: 0 auto;
+}
+
+@media screen and (min-width:1060px) {
+	.main-gallery .project h3 {
+		font-size: 84px;
+	}
+	.main-gallery .flickity-prev-next-button {
+		top: auto;
+		bottom: 46px;
+	}
 }

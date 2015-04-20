@@ -402,12 +402,8 @@ body {
   line-height: 1.4;
   word-wrap: break-word;
   min-height: 100%;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  flex-direction: column;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -463,9 +459,7 @@ a:active {
 /* Layout
 -------------------------------------------------------------- */
 #page {
-  -webkit-flex: 1 0 auto;
-      -ms-flex: 1 0 auto;
-          flex: 1 0 auto;
+  flex: 1 0 auto;
 }
 
 #content {
@@ -796,31 +790,6 @@ a:active {
 }
 .entry-content .more-link {
   text-decoration: none;
-}
-
-/* Author Meta*/
-.author-box {
-  padding: 25px 8% 25px;
-  border-bottom: 1px solid #eee;
-  position: relative;
-  min-height: 110px;
-}
-
-.author-avatar {
-  position: absolute;
-}
-
-.author-avatar img {
-  border-radius: 3px;
-}
-
-.author-description {
-  margin-left: 90px;
-}
-
-.author-description h3 {
-  font-size: 18px;
-  margin-bottom: 5px;
 }
 
 /* Post Meta */
@@ -1633,6 +1602,7 @@ http://flickity.metafizzy.co
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
+  margin: 0;
 }
 
 .flickity-prev-next-button:hover {
@@ -1731,15 +1701,42 @@ http://flickity.metafizzy.co
 
 /* Home Page
 ---------------------------------------------- */
-.flickity-slider .project {
+.main-gallery .gallery-cell {
+  width: 100%;
+}
+
+.main-gallery .project {
   position: relative;
 }
 
-.flickity-slider .project h3 {
+.main-gallery .project img {
+  width: 100%;
+}
+
+.main-gallery .project h3 {
   position: absolute;
   color: #fff;
   font-weight: 600;
   font-size: 64px;
-  bottom: 20px;
-  left: 20px;
+  bottom: 40px;
+  width: 100%;
+  margin-bottom: 0;
+  line-height: 1;
+}
+
+.main-gallery .project h3 span {
+  max-width: 1020px;
+  display: block;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 1060px) {
+  .main-gallery .project h3 {
+    font-size: 84px;
+  }
+
+  .main-gallery .flickity-prev-next-button {
+    top: auto;
+    bottom: 46px;
+  }
 }
