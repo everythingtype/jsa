@@ -30,9 +30,18 @@ get_header(); ?>
 					<h2>Featured Projects</h2>
 					<div class="grid clearfix">
 					<?php
+						$projects = get_field( 'featured_projects' );
+						$ids = array();
+						foreach ( $projects as $project => $value ) :
+							foreach ( $value as $id ) :
+								$ids[] = $id;
+							endforeach;
+						endforeach;
 						$args = array(
 							'post_type' => 'jsa_projects',
-							'posts_per_page' => 6
+							'posts_per_page' => 6,
+							'post__in' => $ids,
+							'orderby' => 'post__in'
 						);
 						$loop = new WP_Query( $args );
 						$count = 0;
@@ -58,6 +67,7 @@ get_header(); ?>
 								</div>
 							<?php
 							endwhile;
+							wp_reset_postdata();
 						endif;
 					?>
 					</div>
@@ -96,6 +106,7 @@ get_header(); ?>
 								</div>
 							<?php
 							endwhile;
+							wp_reset_postdata();
 						endif;
 					?>
 					</div>
