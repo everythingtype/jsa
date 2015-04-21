@@ -1,5 +1,7 @@
 .main-navigation {
 	font-size: 20px;
+	float: left;
+	width: calc( 100% - 158px );
 }
 .main-navigation a {
 	text-decoration: none;
@@ -24,4 +26,7 @@
 }
 .nav-company li {
 	margin-left: 10px;
+}
+.sub-nav {
+	clear: both;
 }

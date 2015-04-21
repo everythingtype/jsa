@@ -23,7 +23,7 @@ get_header(); ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 
 				<?php if ( have_rows('slides') ): ?>
-					<div class="main-gallery js-flickity" data-flickity-options='{ "imagesLoaded": true, "percentPosition": false, "pageDots": false, "wrapAround": true }'>
+					<div class="project-gallery js-flickity" data-flickity-options='{ "imagesLoaded": true, "percentPosition": false, "pageDots": false, "wrapAround": true }'>
 						<?php while ( have_rows('slides') ) : the_row(); ?>
 							<div class="gallery-cell">
 								<?php $image = get_sub_field( 'image' ); ?>
@@ -33,31 +33,49 @@ get_header(); ?>
 					</div>
 				<?php endif; ?>
 
-				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-					<div class="entry-content clearfix">
-						<?php the_content(); ?>
-					</div><!-- .entry-content -->
-				</article><!-- #post-## -->
+				<div class="project-information clearfix">
+					<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+						<div class="entry-content clearfix">
+							<?php the_content(); ?>
 
-				<?php if ( have_rows('project_details') ):
-					while ( have_rows('project_details') ) : the_row();
-					$label = get_sub_field('label');
-					$value = get_sub_field('value'); ?>
-					<p>
-						<?php echo $label; ?><br />
-						<?php echo $value; ?>
-					</p>
-					<?php endwhile;
-				endif; ?>
+							<?php if ( get_field( 'project_pdf' ) ): ?>
+							<div class="project-pdf">
+								<a clas="button" href="<?php the_field( 'project_pdf' ); ?>">Download PDF</a>
+							</div>
+							<?php endif; ?>
 
-			<?php jsa_p2p_the_related(); ?>
+						</div><!-- .entry-content -->
+					</article><!-- #post-## -->
+
+					<aside class="project-details">
+						<?php if ( get_field( 'year' ) ): ?>
+						<div class="year">
+							<h4>Year</h4>
+							<?php the_field( 'year' ); ?>
+						</div>
+						<?php endif; ?>
+						<?php if ( get_field( 'architect' ) ): ?>
+						<div class="architect">
+							<h4>Architect</h4>
+							<?php the_field( 'architect' ); ?>
+						</div>
+						<?php endif; ?>
+						<?php if ( get_field( 'landscape_architect' ) ): ?>
+						<div class="architect">
+							<h4>Landscape Architect</h4>
+							<?php the_field( 'landscape_architect' ); ?>
+						</div>
+						<?php endif; ?>
+					</aside>
+				</div>
+
+				<?php jsa_p2p_the_related(); ?>
 
 			<?php endwhile; // end of the loop. ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-	<?php get_sidebar(); ?>
 </div>
 
 <?php get_footer(); ?>

@@ -135,15 +135,6 @@ a:active {
 	margin: 30px 0;
 }
 
-/* Full Width Template */
-
-.full-width .content-area {
-	margin: 0;
-}
-.full-width .site-main  {
-	margin: 0;
-}
-
 /* General Responsive Layout */
 
 @media screen and (max-width: 881px ) {
@@ -165,12 +156,8 @@ a:active {
 }
 
 @media screen and (max-width:510px) {
-	.single #page .content-area {
-		margin-top:1px;
-	}
 	.single.layout-sidebar-right .site-content .secondary {
-		margin:0;
-		margin-top:1px;
+		margin: 0;
 	}
 }
 
@@ -447,58 +434,20 @@ a:active {
 	}
 }
 
-/* Post Formats
---------------------------------------------------------------*/
+/* Project
+-------------------------------------------------------------- */
 
-#content blockquote {
-	background:#f6f6f6;
-	margin:0 0 20px;
-	padding:20px;
-	font-size: 18px;
-	border-left:4px solid #000;
+.project-gallery {
+	margin-bottom: 60px;
 }
-#content blockquote cite {
-	display: inline-block;
-	margin-top:.5em;
-}
-#content blockquote cite:before {
-	content: '\2014';
-	margin-right:.5em;
-}
-#content blockquote p:last-of-type {
-	margin-bottom:0;
-}
-
-/* Page Templates
---------------------------------------------------------------*/
-
-.template-showcase {
-	.entry-title {
-		text-align: left;
-		font-size: 28px;
-	}
-	.featured-1 {
-		position: relative;
-	}
-	.featured-1 .entry-header {
-		margin-bottom: 15px;
-	}
-	.featured-1 .entry-title {
-		font-size: 38px;
-	}
-	.featured-2,
-	.featured-5 {
-		clear: both;
-	}
-	.featured-2,
-	.featured-3,
-	.featured-4 {
-		width: calc(33.33% - 20px);
+.project-information {
+	article {
 		float: left;
-		margin-right: 30px;
+		width: 60%;
 	}
-	.featured-4 {
-		margin-right: 0;
+	.project-details {
+		float: right;
+		width: 28%;
 	}
 }
 

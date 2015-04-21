@@ -44,6 +44,14 @@
 					<li><a href="#">Contact</a></li>
 					<li><a href="#">Search</a></li>
 				</ul>
+
+				<?php if ( is_singular( 'jsa_projects' ) ) : ?>
+				<ul class="sub-nav">
+					<li><a href="#"><?php the_title(); ?></a></li>
+					<li><a href="#">Info</a></li>
+					<li><a href="#">Slideshow</a></li>
+				</ul>
+				<?php endif; ?>
 			</nav>
 
 		</div>

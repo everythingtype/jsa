@@ -50,8 +50,7 @@ function jsa_setup() {
 
 	// Registers menu above the site title
 	register_nav_menus( array(
-		'primary' => __( 'Primary Menu', 'jsa' ),
-		'footer' => __( 'Footer Menu', 'jsa' )
+		'primary' => __( 'Primary Menu', 'jsa' )
 	) );
 
 	/*
