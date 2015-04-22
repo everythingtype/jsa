@@ -27,6 +27,36 @@
 .nav-company li {
 	margin-left: 10px;
 }
+.nav-search {
+
+	position: relative;
+	height: 16px;
+	width: 24px;
+	cursor: pointer;
+
+	.search-icon {
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
+
+	.search-form {
+		display: none;
+		background: #fff;
+		position: absolute;
+		width: 300px;
+		right: -15px;
+		top: -5px;
+	}
+	.search-form .search-submit {
+		border: none;
+	}
+}
+.nav-search:hover {
+	.search-form {
+		display: block;
+	}
+}
 .sub-nav {
 	clear: both;
 }

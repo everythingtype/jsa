@@ -480,14 +480,21 @@ a:active {
 	padding-right:59px;
 	float:left;
 }
-.search-form input, .search-form button {
-	margin: 0;
+.search-form input,
+.search-form button {
+	height: 36px;
+}
+.search-field {
+	padding: 12px 8px 4px;
 }
 .search-form .search-submit {
 	width: 54px;
 	margin-left:-54px;
 	float:left;
-	height:38px;
+	padding: 0;
+}
+.search-form .search-submit img {
+	margin-top: 5px;
 }
 
 /* Widgets

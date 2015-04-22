@@ -48,11 +48,6 @@ function jsa_setup() {
 	add_image_size( 'jsa-large', 1020, 9999, true );
 	add_image_size( 'jsa-large-crop', 1020, 480, true );
 
-	// Registers menu above the site title
-	register_nav_menus( array(
-		'primary' => __( 'Primary Menu', 'jsa' )
-	) );
-
 	/*
 	 * Switch default core markup for search form, comment form, and comments
 	 * to output valid HTML5.
@@ -69,59 +64,9 @@ function jsa_setup() {
 		'image', 'gallery', 'video', 'quote', 'link'
 	) );
 
-	// Theme layouts
-	add_theme_support(
-		'theme-layouts',
-		array(
-			'single-column' => __( '1 Column Wide', 'jsa' ),
-			'sidebar-right' => __( '2 Columns: Content / Sidebar', 'jsa' ),
-			'sidebar-left' => __( '2 Columns: Sidebar / Content', 'jsa' )
-		),
-		array( 'default' => 'single-column' )
-	);
 }
 endif; // jsa_setup
 add_action( 'after_setup_theme', 'jsa_setup' );
-
-/**
- * Register widget area.
- *
- * @link http://codex.wordpress.org/Function_Reference/register_sidebar
- */
-function jsa_widgets_init() {
-
-	register_sidebar( array(
-		'name'          => __( 'Sidebar', 'jsa' ),
-		'id'            => 'primary',
-		'description'   => '',
-		'before_widget' => '<aside id="%1$s" class="widget module %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h3 class="widget-title">',
-		'after_title'   => '</h3>',
-	) );
-
-}
-add_action( 'widgets_init', 'jsa_widgets_init' );
-
-/**
- * Enqueue fonts.
- */
-function jsa_fonts() {
-
-	// Font options
-	$fonts = array();
-
-
-	$font_uri = '//fonts.googleapis.com/css?family=Crimson+Text%3Aregular%2Citalic%2C700|Playfair+Display%3Aregular%2Citalic%2C700%26subset%3Dlatin%2C';
-
-	// Load Google Fonts
-	wp_enqueue_style( 'jsa-body-fonts', $font_uri, array(), null, 'screen' );
-
-	// Icon Font
-	wp_enqueue_style( 'jsa-icons', get_template_directory_uri() . '/fonts/jsa-icons.css', array(), '0.1.0' );
-
-}
-add_action( 'wp_enqueue_scripts', 'jsa_fonts' );
 
 /**
  * Enqueue scripts and styles.
@@ -196,9 +141,6 @@ require get_template_directory() . '/inc/extras.php';
 
 // Loop pagination
 require get_template_directory() . '/inc/loop-pagination.php';
-
-// Theme Layouts
-require get_template_directory() . '/inc/theme-layouts.php';
 
 // Connections (Posts 2 Posts)
 require get_template_directory() . '/inc/connections.php';

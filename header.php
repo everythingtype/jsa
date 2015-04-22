@@ -42,7 +42,13 @@
 					<li><a href="#">About</a></li>
 					<li><a href="<?php echo get_permalink( get_option('page_for_posts' ) ); ?>">News</a></li>
 					<li><a href="#">Contact</a></li>
-					<li><a href="#">Search</a></li>
+					<li class="nav-search">
+
+						<span class="search-icon">
+						<img src="<?php echo get_template_directory_uri() . '/images/search.svg'; ?>" height="24" width="24" alt="Search">
+						</span>
+						<?php get_search_form(); ?>
+					</li>
 				</ul>
 
 				<?php if ( is_singular( 'jsa_projects' ) ) : ?>
