@@ -11,6 +11,21 @@ Designed by Everything Type Company, http://www.etc-nyc.com
 Developed by Spellerberg Associates, http://www.spellerbergassociates.com
 
 */
+@font-face {
+  font-family: 'CalibreWeb';
+  font-style: normal;
+  font-weight: 400;
+  src: url("fonts/Calibre-Regular.eot?v1");
+  src: url("fonts/Calibre-Regular.eot?#v1") format("embedded-opentype"), url("fonts/Calibre-Regular.woff?v1") format("woff"), url("fonts/Calibre-Regular.ttf?v1") format("truetype");
+  font-weight: normal;
+}
+@font-face {
+  font-family: 'CalibreWeb';
+  font-style: italic;
+  font-weight: 400;
+  src: url("fonts/Calibre-RegularItalic.eot?v1");
+  src: url("fonts/Calibre-RegularItalic.eot?#v1") format("embedded-opentype"), url("fonts/Calibre-RegularItalic.woff?v1") format("woff"), url("fonts/Calibre-RegularItalic.ttf?v1") format("truetype");
+}
 /* Reset
 -------------------------------------------------------------- */
 /*
@@ -283,7 +298,7 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-  font-family: "Calibre", sans-serif;
+  font-family: "CalibreWeb", sans-serif;
   border-style: solid;
   border-width: 0px;
   cursor: pointer;
@@ -341,7 +356,7 @@ input[type="email"],
 input[type="search"],
 input[type="url"],
 textarea {
-  font-family: "Calibre", sans-serif;
+  font-family: "CalibreWeb", sans-serif;
   outline: none;
   -webkit-appearance: none;
   border: 1px solid #d6d6d6;
@@ -395,7 +410,7 @@ html {
 }
 
 body {
-  font-family: "Calibre", sans-serif;
+  font-family: "CalibreWeb", sans-serif;
   background: #fff;
   color: #555;
   font-size: 17px;
@@ -407,7 +422,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Calibre", sans-serif;
+  font-family: "CalibreWeb", sans-serif;
   font-weight: 400;
   margin-bottom: .5em;
 }
@@ -787,7 +802,7 @@ a:active {
 /* Post Meta */
 .entry-meta {
   color: #555;
-  font-family: "Calibre", sans-serif;
+  font-family: "CalibreWeb", sans-serif;
   font-size: 12px;
   line-height: 26px;
   text-transform: uppercase;
@@ -1147,7 +1162,7 @@ a:active {
 }
 
 .comment-author {
-  font-family: "Calibre", sans-serif;
+  font-family: "CalibreWeb", sans-serif;
   display: block;
   font-size: 18px;
   margin-bottom: 10px;
@@ -1182,7 +1197,7 @@ a:active {
 }
 
 .comment-metadata {
-  font-family: "Calibre", sans-serif;
+  font-family: "CalibreWeb", sans-serif;
   text-transform: uppercase;
   font-size: 12px;
 }
@@ -1304,7 +1319,7 @@ a:active {
 /* Footer
 --------------------------------------------------------------*/
 #colophon {
-  font-family: "Calibre", sans-serif;
+  font-family: "CalibreWeb", sans-serif;
   line-height: 2;
   padding: 30px 0;
 }

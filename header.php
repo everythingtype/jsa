@@ -40,7 +40,7 @@
 				</ul>
 				<ul class="nav-company">
 					<li><a href="#">About</a></li>
-					<li><a href="#">News</a></li>
+					<li><a href="<?php echo get_permalink( get_option('page_for_posts' ) ); ?>">News</a></li>
 					<li><a href="#">Contact</a></li>
 					<li><a href="#">Search</a></li>
 				</ul>
