@@ -26,5 +26,4 @@ get_header(); ?>
 	</div><!-- #primary -->
 </div>
 
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>

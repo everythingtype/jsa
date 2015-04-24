@@ -38,13 +38,13 @@
 						<span>Menu</span>
 					</div>
 				<ul class="nav-work">
-					<li><a href="#">Projects</a></li>
-					<li><a href="#">Research</a></li>
+					<li><a href="<?php echo site_url( 'projects' ); ?>">Projects</a></li>
+					<li><a href="<?php echo site_url( 'research' ); ?>">Research</a></li>
 				</ul>
 				<ul class="nav-company">
-					<li><a href="#">About</a></li>
+					<li><a href="<?php echo site_url( 'about' ); ?>">About</a></li>
 					<li><a href="<?php echo get_permalink( get_option('page_for_posts' ) ); ?>">News</a></li>
-					<li><a href="#">Contact</a></li>
+					<li><a href="<?php echo site_url( 'contact' ); ?>">Contact</a></li>
 					<li class="nav-search">
 
 						<span class="search-icon">

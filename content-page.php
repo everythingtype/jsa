@@ -21,6 +21,4 @@
 		?>
 	</div><!-- .entry-content -->
 
-	<?php edit_post_link( __( 'Edit', 'jsa' ), '<footer class="entry-meta entry-footer-meta"><span class="edit-meta meta-group">', '</span></span></span></footer>' ); ?>
-
 </article><!-- #post-## -->

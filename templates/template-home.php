@@ -39,7 +39,7 @@ get_header(); ?>
 						endforeach;
 						$args = array(
 							'post_type' => 'jsa_projects',
-							'posts_per_page' => 6,
+							'posts_per_page' => 3,
 							'post__in' => $ids,
 							'orderby' => 'post__in'
 						);
@@ -80,7 +80,7 @@ get_header(); ?>
 					<?php
 						$args = array(
 							'post_type' => 'post',
-							'posts_per_page' => 6
+							'posts_per_page' => 3
 						);
 						$loop = new WP_Query( $args );
 						$count = 0;
