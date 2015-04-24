@@ -466,11 +466,6 @@ a:active {
     margin: 0 20px;
   }
 }
-@media screen and (max-width: 510px) {
-  #content.col-width {
-    margin: 0;
-  }
-}
 /* Layout
 -------------------------------------------------------------- */
 #page {
@@ -481,82 +476,11 @@ a:active {
   margin-top: 40px;
 }
 
-.content-area {
-  width: 100%;
-}
-
-.site-content .secondary {
-  overflow: hidden;
-  width: 28%;
-}
-
-/* Sidebar Right */
-.layout-sidebar-right .content-area {
-  float: left;
-  margin: 0 -28% 0 0;
-}
-
-.layout-sidebar-right .site-main {
-  margin: 0 28% 0 0;
-  padding-right: 30px;
-}
-
-.layout-sidebar-right .site-content .secondary {
-  float: right;
-  margin: 30px 0;
-  padding-left: 30px;
-}
-
-/* Sidebar Left */
-.layout-sidebar-left .content-area {
-  float: right;
-  margin: 0 0 0 -28%;
-}
-
-.layout-sidebar-left .site-main {
-  margin: 0 0 0 28%;
-}
-
-.layout-sidebar-left .site-content .secondary {
-  float: left;
-  margin: 30px 0;
-}
-
-/* General Responsive Layout */
-@media screen and (max-width: 881px) {
-  #page .content-area {
-    float: none;
-  }
-
-  #page .site-main {
-    margin: 0;
-    padding: 0;
-  }
-
-  #page .content-area {
-    margin: 0;
-  }
-
-  #page .site-content .secondary {
-    float: none;
-    width: auto;
-    margin: 30px 0;
-  }
-}
-@media screen and (max-width: 510px) {
-  .single.layout-sidebar-right .site-content .secondary {
-    margin: 0;
-  }
-}
 /* Header
 -------------------------------------------------------------- */
 .site-header {
   padding: 30px 0;
-}
-
-.site-branding {
-  float: left;
-  margin-right: 30px;
+  position: relative;
 }
 
 .site-title {
@@ -582,20 +506,34 @@ a:active {
 }
 
 @media screen and (min-width: 880px) {
-  .site-title {
-    font-size: 48px;
+  .site-branding {
+    float: left;
+    margin: 0 30px 0 0;
   }
 }
 /* Main Navigation
 -------------------------------------------------------------- */
+/* Menu Toggle */
+.menu-toggle {
+  background: #ccc;
+  text-align: center;
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+/* Main Navigation */
 .main-navigation {
-  font-size: 20px;
-  float: left;
-  width: calc(100% - 158px );
+  line-height: 1;
 }
 
 .main-navigation a {
   text-decoration: none;
+}
+
+.main-navigation a:hover {
+  color: #111;
 }
 
 .main-navigation ul {
@@ -604,58 +542,109 @@ a:active {
   margin: 0;
 }
 
-.main-navigation ul li {
-  display: inline-block;
-}
-
 .nav-work {
-  float: left;
   text-transform: uppercase;
 }
 
-.nav-work li {
-  margin-right: 10px;
-}
-
+.nav-work,
 .nav-company {
-  float: right;
-}
-
-.nav-company li {
-  margin-left: 10px;
-}
-
-.nav-search {
-  position: relative;
-  height: 16px;
-  width: 24px;
-  cursor: pointer;
-}
-.nav-search .search-icon {
-  position: absolute;
-  right: 0;
-  top: 0;
-}
-.nav-search .search-form {
   display: none;
-  background: #fff;
-  position: absolute;
-  width: 300px;
-  right: -15px;
-  top: -5px;
-}
-.nav-search .search-form .search-submit {
-  border: none;
-}
-
-.nav-search:hover .search-form {
-  display: block;
 }
 
 .sub-nav {
   clear: both;
 }
 
+@media screen and (max-width: 880px) {
+  .main-navigation {
+    clear: both;
+  }
+
+  .nav-work {
+    border-top: 1px solid #ccc;
+  }
+
+  .main-navigation ul li {
+    border-bottom: 1px solid #ccc;
+  }
+
+  .main-navigation ul li a {
+    padding: 12px 0 8px;
+    display: block;
+  }
+
+  .main-navigation .nav-search {
+    padding: 12px 0 8px;
+  }
+
+  .search-form {
+    display: none;
+  }
+}
+@media screen and (min-width: 881px) {
+  .menu-toggle {
+    display: none;
+  }
+
+  .main-navigation {
+    font-size: 20px;
+    float: left;
+    width: calc(100% - 158px );
+  }
+
+  .main-navigation ul li {
+    display: inline-block;
+  }
+
+  .nav-work,
+  .nav-company {
+    display: block;
+  }
+
+  .nav-work {
+    float: left;
+    text-transform: uppercase;
+  }
+
+  .nav-work li {
+    margin-right: 10px;
+  }
+
+  .nav-company {
+    float: right;
+  }
+
+  .nav-company li {
+    margin-left: 10px;
+  }
+
+  .nav-search {
+    position: relative;
+    height: 16px;
+    width: 24px;
+    cursor: pointer;
+  }
+  .nav-search .search-icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .nav-search .search-form {
+    display: none;
+    background: #fff;
+    position: absolute;
+    width: 300px;
+    right: -15px;
+    top: -5px;
+  }
+  .nav-search .search-form .search-submit {
+    border: none;
+  }
+
+  .nav-search:hover .search-form {
+    display: block;
+  }
+}
 /* Front Page
 -------------------------------------------------------------- */
 .home #content {

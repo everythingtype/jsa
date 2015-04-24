@@ -103,11 +103,6 @@ a:active {
 		margin:0 20px;
 	}
 }
-@media screen and (max-width:510px) {
-	#content.col-width {
-		margin:0;
-	}
-}
 
 /* Layout
 -------------------------------------------------------------- */
@@ -118,79 +113,13 @@ a:active {
 #content {
 	margin-top: 40px;
 }
-.content-area {
-	width: 100%;
-}
-.site-content .secondary {
-	overflow: hidden;
-	width: 28%;
-}
-
-/* Sidebar Right */
-
-.layout-sidebar-right .content-area {
-	float: left;
-	margin: 0 -28% 0 0;
-}
-.layout-sidebar-right .site-main {
-	margin: 0 28% 0 0;
-	padding-right: 30px;
-}
-.layout-sidebar-right .site-content .secondary {
-	float: right;
-	margin: 30px 0;
-	padding-left: 30px;
-}
-
-/* Sidebar Left */
-
-.layout-sidebar-left .content-area {
-	float: right;
-	margin: 0 0 0 -28%;
-}
-.layout-sidebar-left .site-main {
-	margin: 0 0 0 28%;
-}
-.layout-sidebar-left .site-content .secondary {
-	float: left;
-	margin: 30px 0;
-}
-
-/* General Responsive Layout */
-
-@media screen and (max-width: 881px ) {
-	#page .content-area {
-		float: none;
-	}
-	#page .site-main {
-		margin: 0;
-		padding: 0;
-	}
-	#page .content-area {
-		margin: 0;
-	}
-	#page .site-content .secondary {
-		float: none;
-		width: auto;
-		margin: 30px 0;
-	}
-}
-
-@media screen and (max-width:510px) {
-	.single.layout-sidebar-right .site-content .secondary {
-		margin: 0;
-	}
-}
 
 /* Header
 -------------------------------------------------------------- */
 
 .site-header {
 	padding:30px 0;
-}
-.site-branding {
-	float: left;
-	margin-right: 30px;
+	position: relative;
 }
 .site-title {
 	color: #111;
@@ -212,8 +141,9 @@ a:active {
 }
 
 @media screen and (min-width:880px) {
-	.site-title {
-		font-size:48px;
+	.site-branding {
+		float: left;
+		margin: 0 30px 0 0;
 	}
 }
 

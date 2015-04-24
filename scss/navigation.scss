@@ -1,62 +1,119 @@
+/* Menu Toggle */
+
+.menu-toggle {
+	background: #ccc;
+	text-align: center;
+	cursor: pointer;
+	position: absolute;
+	right: 20px;
+	top: 20px;
+}
+
+/* Main Navigation */
+
 .main-navigation {
-	font-size: 20px;
-	float: left;
-	width: calc( 100% - 158px );
+	line-height: 1;
 }
 .main-navigation a {
 	text-decoration: none;
+}
+.main-navigation a:hover {
+	color: #111;
 }
 .main-navigation ul {
 	list-style: none;
 	padding: 0;
 	margin: 0;
 }
-.main-navigation ul li {
-	display: inline-block;
-}
 .nav-work {
-	float: left;
 	text-transform: uppercase;
 }
-.nav-work li {
-	margin-right: 10px;
-}
+.nav-work,
 .nav-company {
-	float: right;
-}
-.nav-company li {
-	margin-left: 10px;
-}
-.nav-search {
-
-	position: relative;
-	height: 16px;
-	width: 24px;
-	cursor: pointer;
-
-	.search-icon {
-		position: absolute;
-		right: 0;
-		top: 0;
-	}
-
-	.search-form {
-		display: none;
-		background: #fff;
-		position: absolute;
-		width: 300px;
-		right: -15px;
-		top: -5px;
-	}
-	.search-form .search-submit {
-		border: none;
-	}
-}
-.nav-search:hover {
-	.search-form {
-		display: block;
-	}
+	display: none;
 }
 .sub-nav {
 	clear: both;
+}
+
+@media screen and (max-width:880px) {
+	.main-navigation {
+		clear:both;
+	}
+	.nav-work {
+		border-top: 1px solid #ccc;
+	}
+	.main-navigation ul li {
+		border-bottom: 1px solid #ccc;
+	}
+	.main-navigation ul li a {
+		padding: 12px 0 8px;
+		display: block;
+	}
+	.main-navigation .nav-search {
+		padding: 12px 0 8px;
+	}
+	.search-form {
+		display: none;
+	}
+}
+
+@media screen and (min-width:881px) {
+	.menu-toggle {
+		display: none;
+	}
+	.main-navigation {
+		font-size: 20px;
+		float: left;
+		width: calc( 100% - 158px );
+	}
+	.main-navigation ul li {
+		display: inline-block;
+	}
+	.nav-work,
+	.nav-company {
+		display: block;
+	}
+	.nav-work {
+		float:left;
+		text-transform: uppercase;
+	}
+	.nav-work li {
+		margin-right: 10px;
+	}
+	.nav-company {
+		float: right;
+	}
+	.nav-company li {
+		margin-left: 10px;
+	}
+	.nav-search {
+
+		position: relative;
+		height: 16px;
+		width: 24px;
+		cursor: pointer;
+
+		.search-icon {
+			position: absolute;
+			right: 0;
+			top: 0;
+		}
+		.search-form {
+			display: none;
+			background: #fff;
+			position: absolute;
+			width: 300px;
+			right: -15px;
+			top: -5px;
+		}
+		.search-form .search-submit {
+			border: none;
+		}
+	}
+	.nav-search:hover {
+		.search-form {
+			display: block;
+		}
+	}
 }

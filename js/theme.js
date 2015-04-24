@@ -28,10 +28,16 @@
 			self.navigationInit();
 
 			this.cache.$document.on( 'ready', function() {
-
 				self.fitVidsInit();
-
 			} );
+
+			// Handle Navigation on Resize
+			this.cache.$window.on( 'resize', self.debounce(
+				function() {
+					// Remove any inline styles that may have been added to menu
+					$('.nav-work, .nav-company').attr('style','');
+				}, 200 )
+			);
 
 		},
 
@@ -43,6 +49,11 @@
 		 * @return void
 		 */
 		navigationInit: function() {
+			// When mobile menu is tapped/clicked
+			$('.menu-toggle').on( 'click', function() {
+				var menu = $(this).data('toggle');
+				$(menu).slideToggle();
+			});
 		},
 
 		// Initialize FitVids

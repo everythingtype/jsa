@@ -33,7 +33,10 @@
 				</h1>
 			</div>
 
-			<nav class="main-navigation clearfix" role="navigation">
+			<nav class="main-navigation" role="navigation">
+					<div class="menu-toggle" data-toggle=".nav-work, .nav-company">
+						<span>Menu</span>
+					</div>
 				<ul class="nav-work">
 					<li><a href="#">Projects</a></li>
 					<li><a href="#">Research</a></li>
@@ -45,7 +48,7 @@
 					<li class="nav-search">
 
 						<span class="search-icon">
-						<img src="<?php echo get_template_directory_uri() . '/images/search.svg'; ?>" height="24" width="24" alt="Search">
+							<img src="<?php echo get_template_directory_uri() . '/images/search.svg'; ?>" height="24" width="24" alt="Search">
 						</span>
 						<?php get_search_form(); ?>
 					</li>
