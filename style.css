@@ -417,8 +417,12 @@ body {
   line-height: 1.4;
   word-wrap: break-word;
   min-height: 100%;
+  display: -webkit-flex;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -469,7 +473,9 @@ a:active {
 /* Layout
 -------------------------------------------------------------- */
 #page {
-  flex: 1 0 auto;
+  -webkit-flex: 1 0 auto;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
   background: #fff;
   z-index: 1;
 }
@@ -1751,4 +1757,14 @@ http://flickity.metafizzy.co
     top: auto;
     bottom: 46px;
   }
+}
+/* Projects Page
+---------------------------------------------- */
+.project-gallery .gallery-cell {
+  width: 100%;
+}
+
+.project-gallery .gallery-cell img {
+  width: 100%;
+  height: auto;
 }
