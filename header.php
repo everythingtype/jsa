@@ -19,7 +19,15 @@
 </head>
 
 <body <?php body_class(); ?>>
-<div id="page" class="hfeed site">
+
+<div class="masthead-fixed">
+	<div class="fixer">
+		<h1>JSA</h1>
+		<h2>Architecture for Institutions, Residences and Public Space</h2>
+	</div>
+</div>
+
+<div id="page" class="hfeed site clearfix">
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'jsa' ); ?></a>
 
 	<header id="masthead" class="site-header" role="banner">
