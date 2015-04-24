@@ -20,12 +20,14 @@
 
 <body <?php body_class(); ?>>
 
+<?php if ( is_page_template('templates/template-home.php' ) ) : ?>
 <div class="masthead-fixed">
 	<div class="fixer">
 		<h1>JSA</h1>
 		<h2>Architecture for Institutions, Residences and Public Space</h2>
 	</div>
 </div>
+<?php endif; ?>
 
 <div id="page" class="hfeed site clearfix">
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'jsa' ); ?></a>
