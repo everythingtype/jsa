@@ -12,10 +12,6 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-			<?php if ( function_exists( 'breadcrumb_trail' ) ):
-				breadcrumb_trail();
-			endif; ?>
-
 			<?php if ( is_category() || is_tag() || is_author() || is_day() || is_year() ) : ?>
 			<header class="page-header">
 				<h1 class="page-title">

@@ -729,7 +729,8 @@ a:active {
   margin-bottom: 30px;
 }
 
-.entry-title {
+.entry-title,
+.page-title {
   font-size: 48px;
   color: #111;
   margin: 0;
@@ -739,22 +740,6 @@ a:active {
 .entry-title a {
   color: #111;
   text-decoration: none;
-}
-
-.layout-single-column .entry-title {
-  text-align: center;
-}
-
-.page-header {
-  padding: 20px 40px;
-  border-bottom: 1px dotted #eee;
-}
-
-.page-title {
-  font-size: 16px;
-  text-transform: uppercase;
-  margin: 0;
-  -webkit-font-smoothing: antialiased;
 }
 
 .entry-image-section {
