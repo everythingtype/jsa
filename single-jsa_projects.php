@@ -1,80 +1,50 @@
-<?php
-/**
- * The template for displaying all pages.
- *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site will use a
- * different template.
- *
- * @package JSA
- */
+<?php get_header(); ?>
 
-get_header(); ?>
+<?php if (have_posts()) : ?>
+	<?php while (have_posts()) : the_post(); ?>
 
-<?php while ( have_posts() ) : the_post(); ?>
+		<h2><?php the_title(); ?></h2>
 
-<?php if ( have_rows('slides') ): ?>
-	<div class="project-gallery js-flickity" data-flickity-options='{ "imagesLoaded": true, "percentPosition": false, "pageDots": false, "wrapAround": true }'>
-		<?php while ( have_rows('slides') ) : the_row(); ?>
-			<div class="gallery-cell">
-				<?php $image = get_sub_field( 'image' ); ?>
-				<?php echo wp_get_attachment_image( $image, 'jsa-large-crop' ); ?>
-			</div>
-		<?php endwhile; ?>
-	</div>
-<?php endif; ?>
-
-<div class="col-width">
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
-
-			<header class="entry-header">
-				<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-			</header><!-- .entry-header -->
-
-			<div class="project-information clearfix">
-				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-					<div class="entry-content clearfix">
-						<?php the_content(); ?>
-
-						<?php if ( get_field( 'project_pdf' ) ): ?>
-						<div class="project-pdf">
-							<a clas="button" href="<?php the_field( 'project_pdf' ); ?>">Download PDF</a>
+		<?php if( have_rows('slides') ): ?>
+			<?php while ( have_rows('slides') ) : the_row(); ?>
+				<?php $slide_layout = get_sub_field('slide_layout'); ?>
+				<div class="slide slide-<?php echo $slide_layout; ?>">
+					<?php $image = get_sub_field('image'); ?>
+					<?php if ( $image ) : ?>
+						<div class="slideimage">
+							<?php spellerberg_the_image($image['id'],'phoneplus'); ?>
+							Size: <?php echo tevkori_get_sizes( $image['id']) ?>
 						</div>
+					<?php endif; ?>
+
+					<?php if ( $slide_layout == 'double' ) : ?>
+						<?php $second_image = get_sub_field('second_image'); ?>
+						<?php if ( $second_image ) : ?>
+							<div class="secondslideimage">
+								<?php spellerberg_the_image($second_image['id'],'phoneplus'); ?>
+							</div>
 						<?php endif; ?>
-
-					</div><!-- .entry-content -->
-				</article><!-- #post-## -->
-
-				<aside class="project-details">
-					<?php if ( get_field( 'year' ) ): ?>
-					<div class="year">
-						<h4>Year</h4>
-						<?php the_field( 'year' ); ?>
-					</div>
 					<?php endif; ?>
-					<?php if ( get_field( 'architect' ) ): ?>
-					<div class="architect">
-						<h4>Architect</h4>
-						<?php the_field( 'architect' ); ?>
-					</div>
-					<?php endif; ?>
-					<?php if ( get_field( 'landscape_architect' ) ): ?>
-					<div class="architect">
-						<h4>Landscape Architect</h4>
-						<?php the_field( 'landscape_architect' ); ?>
-					</div>
-					<?php endif; ?>
-				</aside>
-			</div>
+				</div>
+			<?php endwhile; ?>
+		<?php endif; ?>
 
-			<?php jsa_p2p_the_related(); ?>
+		<?php the_content(); ?>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+		<?php if( have_rows('project_details') ): 
+			while ( have_rows('project_details') ) : the_row(); 
+				$label = get_sub_field('label');
+				$value = get_sub_field('value'); ?>
+				<p>
+					<?php echo $label; ?><br />
+					<?php echo $value; ?>
+				</p>
+			<?php endwhile;
+		endif; ?>
 
-</div>
-<?php endwhile; // end of the loop. ?>
+		<?php jsa_p2p_the_related(); ?>
+
+	<?php endwhile; ?>
+<?php endif; ?>
 
 <?php get_footer(); ?>

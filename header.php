@@ -1,79 +1,22 @@
-<?php
-/**
- * The Header for our theme.
- *
- * Displays all of the <head> section and everything up till <div id="content">
- *
- * @package JSA
- */
-?><!DOCTYPE html>
-<html <?php language_attributes(); ?>>
+<!doctype html>
+<html>
 <head>
-<meta charset="<?php bloginfo( 'charset' ); ?>">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title><?php wp_title( '|', true, 'right' ); ?></title>
-<link rel="profile" href="http://gmpg.org/xfn/11">
-<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+<meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
+
+<title><?php 
+	wp_title( '&ndash;', true, 'right' );
+	bloginfo( 'name' ); 
+	$site_description = get_bloginfo( 'description', 'display' );
+
+	if ( $paged >= 2 || $page >= 2 )
+		echo ' &ndash; ' . sprintf( __( 'Page %s' ), max( $paged, $page ) );
+	?></title>
 
 <?php wp_head(); ?>
+
 </head>
+<body>
 
-<body <?php body_class(); ?>>
+	<h1><a href="/"><span>Joel Sanders Architect</span></a></h1>
 
-<?php if ( is_page_template('templates/template-home.php' ) ) : ?>
-<div class="masthead-fixed">
-	<div class="fixer">
-		<h1>JSA</h1>
-		<h2>Architecture for Institutions, Residences and Public Space</h2>
-	</div>
-</div>
-<?php endif; ?>
-
-<div id="page" class="hfeed site clearfix">
-	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'jsa' ); ?></a>
-
-	<header id="masthead" class="site-header" role="banner">
-		<div class="col-width clearfix">
-
-			<div class="site-branding">
-				<h1 class="site-logo">
-					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-						<img src="<?php echo get_template_directory_uri() . '/images/jsa-logo.png'; ?>" alt="<?php echo get_bloginfo( 'name' ); ?>" width="128" height="56">
-					</a>
-				</h1>
-			</div>
-
-			<nav class="main-navigation" role="navigation">
-					<div class="menu-toggle" data-toggle=".nav-work, .nav-company">
-						<span>Menu</span>
-					</div>
-				<ul class="nav-work">
-					<li><a href="<?php echo site_url( 'projects' ); ?>">Projects</a></li>
-					<li><a href="<?php echo site_url( 'research' ); ?>">Research</a></li>
-				</ul>
-				<ul class="nav-company">
-					<li><a href="<?php echo site_url( 'about' ); ?>">About</a></li>
-					<li><a href="<?php echo get_permalink( get_option('page_for_posts' ) ); ?>">News</a></li>
-					<li><a href="<?php echo site_url( 'contact' ); ?>">Contact</a></li>
-					<li class="nav-search">
-
-						<span class="search-icon">
-							<img src="<?php echo get_template_directory_uri() . '/images/search.svg'; ?>" height="24" width="24" alt="Search">
-						</span>
-						<?php get_search_form(); ?>
-					</li>
-				</ul>
-
-				<?php if ( is_singular( 'jsa_projects' ) ) : ?>
-				<ul class="sub-nav">
-					<li><a href="#"><?php the_title(); ?></a></li>
-					<li><a href="#">Info</a></li>
-					<li><a href="#">Slideshow</a></li>
-				</ul>
-				<?php endif; ?>
-			</nav>
-
-		</div>
-	</header><!-- #masthead -->
-
-	<div id="content" class="site-content clearfix">
+	<?php wp_nav_menu( array( 'theme_location' => 'projectsresearch' ) ); ?>
