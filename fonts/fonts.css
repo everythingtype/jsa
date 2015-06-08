@@ -1,0 +1,22 @@
+/* Calibre */
+
+@font-face {
+	font-family: 'Calibre';
+	font-style: normal;
+	font-weight: 400;
+	src: 	url("commercial/Calibre-Regular.eot?v1");
+	src: 	url("commercial/Calibre-Regular.eot?#v1") format("embedded-opentype"), 
+			url("commercial/Calibre-Regular.woff?v1") format("woff"), 
+			url("commercial/Calibre-Regular.ttf?v1") format("truetype");
+}
+
+@font-face {
+	font-family: 'Calibre';
+	font-style: italic;
+	font-weight: 400;
+	src: 	url("commercial/Calibre-RegularItalic.eot?v1");
+	src: 	url("commercial/Calibre-RegularItalic.eot?#v1") format("embedded-opentype"), 
+			url("commercial/Calibre-RegularItalic.woff?v1") format("woff"), 
+			url("commercial/Calibre-RegularItalic.ttf?v1") format("truetype");
+}
+

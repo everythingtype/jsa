@@ -1,42 +1,40 @@
-<?php
-/**
- * The main template file.
- *
- * This is the most generic template file in a WordPress theme
- * and one of the two required files for a theme (the other being style.css).
- * It is used to display a page when nothing more specific matches a query.
- * E.g., it puts together the home page when no home.php file exists.
- * Learn more: http://codex.wordpress.org/Template_Hierarchy
- *
- * @package JSA
- */
+<?php get_header(); ?>
 
-get_header(); ?>
+<?php if (have_posts()) : ?>
+	<div class="indextemplate">
+		<div class="edgemargin">
+			<?php while (have_posts()) : the_post(); ?>
+				<div class="postcontent">
+					<?php if ( is_single() ) : ?>
+						<h2><?php the_title(); ?></h2>
+					<?php else : ?>
+						<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+					<?php endif; ?>
 
-<div class="col-width">
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+					<div class="postsubtitle">
+						<?php 
+						if ( in_category('books') ) :
+							$book_subtitle = get_field('book_subtitle'); 
+							if ( $book_subtitle && $book_subtitle != '' ) :
+								echo $book_subtitle;
+							endif; 
+						else : ?>
+							<p><?php the_time('F j, Y'); ?></p>
+						<?php endif;?>
+					</div>
 
-		<?php if ( have_posts() ) : ?>
+					<?php if ( has_post_thumbnail() ) : ?>
+						<p><?php spellerberg_the_thumbnail($post->ID,'phoneplus'); ?></p>
+					<?php endif; ?>
 
-			<?php /* Start the Loop */ ?>
-			<?php while ( have_posts() ) : the_post(); ?>
+					<?php the_content(); ?>
 
-				<?php get_template_part( 'content' ); ?>
-
+				</div>
+				<div class="sociallinks">
+				</div>
 			<?php endwhile; ?>
-
-			<?php jsa_paging_nav(); ?>
-
-		<?php else : ?>
-
-			<?php get_template_part( 'content', 'none' ); ?>
-
-		<?php endif; ?>
-
-		</main><!-- #main -->
-
-	</div><!-- #primary -->
-</div>
+		</div>
+	</div>
+<?php endif; ?>
 
 <?php get_footer(); ?>
