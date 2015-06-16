@@ -41,7 +41,7 @@
 
 		$('body').removeClass('haslightbox');
 
-		$(this).fadeOut( 500, function() {
+		$(this).fadeOut( 1000, function() {
 			// Complete
 			window.history.replaceState("", "Home", "/home/");
 		});

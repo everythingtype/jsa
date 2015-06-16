@@ -28,6 +28,8 @@
 </head>
 <body>
 
+<?php if ( is_home() || is_front_page() ) get_template_part('parts/splash'); ?>
+
 <div class="topheader">
 	
 	<div class="wpadminbarspacer"></div>

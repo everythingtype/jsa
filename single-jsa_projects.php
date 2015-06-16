@@ -88,7 +88,23 @@
 
 		</div>
 
-		<?php jsa_p2p_the_related(); ?>
+		<?php 
+			$related = p2p_type('jsa_projects_to_jsa_projects')->get_connected(); 
+
+			if ( $related->have_posts() ) : ?>
+				<h2>Related Projects</h2>
+				<div class="grid">
+				<?php while ( $related->have_posts() ) : 
+					$related->the_post();
+					get_template_part('parts/griditem');
+				endwhile;
+
+				wp_reset_postdata(); 
+		?>
+				</div>
+		<?php endif; ?>
+
+		<?php get_template_part('parts/backtoprojects'); ?>
 
 	<?php endwhile; ?>
 	</div>

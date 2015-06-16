@@ -4,80 +4,88 @@
 
 get_header(); ?>
 <div class="listpage">
-	<div class="edgemargin">
 	<?php if (have_posts()) : ?>
 		<?php while (have_posts()) : the_post(); ?>
-
-			<?php $list_title = get_field('list_title'); ?>
-			<?php if ( $list_title ) : ?>
-				<h2><?php echo $list_title; ?></h2>
-			<?php endif; ?>
-
 			<?php if( have_rows('list_items') ): ?> 
-				<div class="listitems">
 
-				<?php 
+				<?php get_template_part('parts/listfeatures'); ?>
 
-				$currentitemdate = null;
+				<div class="edgemargin">
 
-				while ( have_rows('list_items') ) : the_row();
+					<?php $list_title = get_field('list_title'); ?>
+					<?php if ( $list_title ) : ?>
+						<h2><?php echo $list_title; ?></h2>
+					<?php endif; ?>
 
-					$item_title = get_sub_field('item_title');
-					$item_subtitle = get_sub_field('item_subtitle'); 
+					<div class="listitems">
 
-					if ( $item_title || $item_subtitle ) :
+					<?php 
 
-						$item_date = get_sub_field('item_date');
+					$currentitemdate = null;
 
-						if ( $item_date ) :
+					while ( have_rows('list_items') ) : the_row();
 
-							if ( $item_date == $currentitemdate ) :
-								// Do nothing
-							else :
-								echo '<h3>' . $item_date . '</h3>'; 
+						$item_title = get_sub_field('item_title');
+						$item_subtitle = get_sub_field('item_subtitle'); 
+
+						if ( $item_title || $item_subtitle ) :
+
+							$item_date = get_sub_field('item_date');
+
+							if ( $item_date ) :
+
+								if ( $item_date == $currentitemdate ) :
+									// Do nothing
+								else :
+									echo '<h3>' . $item_date . '</h3>'; 
+								endif; 
+
+								$currentitemdate = $item_date;
+
+							else : 
+								$currentitemdate = null;
+							endif;
+
+							$item_link_type = get_sub_field('item_link_type');
+							if ( $item_link_type == 'internal' ) :
+								$item_internal_link = get_sub_field('item_internal_link');
+								if ( $item_internal_link ) :
+									$link = $item_internal_link;
+								else :
+									$link = false;
+								endif;
+							elseif ( $item_link_type == 'external' ) :
+								$item_external_link = get_sub_field('item_external_link');
+								if ( $item_external_link ) :
+									$link = $item_external_link;
+								else :
+									$link = false;
+								endif;
+							else:
+								$link = false;
 							endif; 
 
-							$currentitemdate = $item_date;
+							echo '<p>';
 
-						else : 
-							$currentitemdate = null;
+								if ( $link ) :
+									echo '<a href="'. $link .'" ';
+									if ( $item_link_type == 'external' ) echo 'target="_blank"';
+									echo '>';
+								endif;
+
+								if ( $item_title ) echo $item_title;
+
+								if ( $item_title && $item_subtitle) echo '<br />';
+
+								if ( $item_subtitle ) echo $item_subtitle;
+
+								if ( $link ) echo '</a>';
+
+							echo '</p>';
+
 						endif;
+					endwhile; ?>
 
-						$item_link_type = get_sub_field('item_link_type');
-						if ( $item_link_type == 'internal' ) :
-							$item_internal_link = get_sub_field('item_internal_link');
-							if ( $item_internal_link ) :
-								$link = $item_internal_link;
-							endif;
-						elseif ( $item_link_type == 'external' ) :
-							$item_external_link = get_sub_field('item_external_link');
-							if ( $item_external_link ) :
-								$link = $item_external_link;
-							endif;
-						else:
-							$link = false;
-						endif; 
-
-						if ( $link ) :
-							echo '<a href="'. $link .'" ';
-							if ( $item_link_type == 'external' ) echo 'target="_blank"';
-							echo '>';
-						endif;
-
-						echo '<p>';
-
-							if ( $item_title ) echo '<span class="itemtitle">' . $item_title. '</span>';
-
-							if ( $item_title && $item_subtitle) echo '<br />';
-
-							if ( $item_subtitle ) echo '<span class="itemsubtitle">' . $item_subtitle . '</span>';
-
-						echo '</p>';
-
-						if ( $link ) echo '</a>';
-
-					endif;
-				endwhile; ?>
 				</div>
 
 			<?php endif; ?>

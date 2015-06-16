@@ -127,16 +127,6 @@ get_header(); ?>
 
 </div>
 
-<?php if ( is_home() || is_front_page() ) : ?>
-<div class="splash">
-	<div class="tagline">
-		<span class="line">Architecture for</span>
-		<span class="line">Institutions, Residences</span>
-		<span class="line">and Public Space</span>
-	</div>
-</div>
-<?php endif; ?>
-
 	<?php endwhile; ?>
 <?php endif; ?>
 <?php get_footer(); ?>

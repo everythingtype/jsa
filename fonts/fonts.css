@@ -20,3 +20,15 @@
 			url("commercial/Calibre-RegularItalic.ttf?v1") format("truetype");
 }
 
+/* JSA Icons */
+
+@font-face {
+	font-family: "Icons";
+	font-weight: normal;
+	font-style: 400;
+	src:	url("jsa.eot");
+	src:	url("jsa.eot?#iefix") format("embedded-opentype"),
+			url("jsa.woff") format("woff"),
+			url("jsa.ttf") format("truetype"),
+			url("jsa.svg#jsa") format("svg");
+}

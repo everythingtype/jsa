@@ -62,7 +62,7 @@ a::-moz-selection { background: #000; color: #fff; }
 .current-menu-ancestor a,
 .current-menu-item a { color: #000; }
 
-.topheader h2 {float: left;  margin: 0; text-transform: none;}
+.topheader h2 {float: left;  margin: 0; text-transform: none; clear: both; }
 .topheader #infolink { display: block; float: left;  margin-left: 35px; color: #a7a9ab; }
 .topheader #infolink:hover { color: #000; cursor: pointer; }
 
@@ -97,6 +97,11 @@ footer p { float: left; margin: 0 43px 0 0; }
 .columngrid .griditem:hover p { color: #a7a9ab; }
 .columngrid .griditem .inner { position: static; }
 
+.listpage .grid { padding-bottom: 50px; }
+.listpage .griditem a { color: #000;}
+.listpage .griditem a span { color: #a7a9ab; }
+
+
 /* Homepage */
 
 .carousel { line-height: 0; }
@@ -108,14 +113,16 @@ footer p { float: left; margin: 0 43px 0 0; }
 .homemission { font-size: 32px; line-height: 1.2; letter-spacing: 0.03em; margin-right: 34.2951655843%; padding: 59px 0 83px 0; }
 .homemission p { margin: 0; }
 
-.homepage h2 { font-weight: 400; font-size: 22px; margin: 0 105px; padding: 10px 0 13px 0; text-transform: uppercase; border-top: 1px solid #a7a9ab;}
+.homepage h2 { font-weight: 400; font-size: 22px; margin: 0 105px; padding: 10px 0 13px 0; text-transform: uppercase; }
 
 /* Splash */
 
-.js .splash { position: fixed; top: 0; right: 0; bottom: 0; left: 0; z-index: 200; background: url('images/splash.svg') center center; background-size: cover; cursor: pointer; display: block; }
+.splash { z-index: 200; background-position: center center; background-size: cover; cursor: pointer; display: block; }
 
 .tagline { color: #a7a9ab; font-size: 32px; line-height: 1.21875; letter-spacing: 0.03em; padding: 0 0 57px 104px; box-sizing: border-box; position: absolute; left: 0; bottom: 0; }
 .tagline .line { display: block; }
+.tagline .readmore { display: inline-block; text-transform: uppercase; border: 1px solid #a7a9ab; margin-top: 30px; padding: 15px 18px 5px 18px; }
+.tagline .readmore:hover { color: #000; border: 1px solid #000; }
 
 /* Project Category */
 
@@ -125,15 +132,23 @@ footer p { float: left; margin: 0 43px 0 0; }
 
 .projectsingle { margin-bottom: 130px; overflow: hidden; }
 
+.projectsingle h2 { font-weight: 400; font-size: 22px; margin: 0 105px; padding: 10px 0 13px 0; text-transform: uppercase; clear: both; }
+
 .projectdetails { padding: 105px; font-size: 26px; line-height: 1.2307692308; }
 
-.projectdescription { width: 65.8536585366%; float: left; }
+.projectdescription { width: 65.8536585366%; float: left; padding-bottom: 75px; }
 
 .projectmeta { width: 23.1707317073%; float: right; font-size: 22px; line-height: 1.2727272727; }
-.projectmeta h3 { margin: 1em 0 0 0; font-size: 22px; font-weight: normal; }
+.projectmeta h3 { margin: 1em 0 0 0; font-size: 22px; font-weight: 400; }
 .projectmeta ul { margin: 0 0 1em 0; padding: 0; list-style: none; color: #a7a9ab;}
 .projectmeta li { margin: 0; padding: 0; }
 .projectmeta a { color: #a7a9ab; }
+
+
+
+
+.backto { clear: both; }
+.backto span { font-family: "Icons"; font-size: .7em; vertical-align: middle; }
 
 /* Research Page  */
 
@@ -141,8 +156,10 @@ footer p { float: left; margin: 0 43px 0 0; }
 
 /* Page Template */
 
-.pagetemplate { margin: 80px 0 130px 0; }
-.pagecontent { width: 65.8536585366%; font-size: 26px; line-height: 1.2307692308; }
+.pagetemplate { margin: 80px 0 55px 0; }
+.pagecontent { width: 65.8536585366%; font-size: 26px; line-height: 1.2307692308; margin-bottom: 75px; }
+.pagetemplate .grid { margin-bottom: 75px; }
+
 
 /* Index Temlate (Posts, Books) */
 
@@ -159,12 +176,12 @@ footer p { float: left; margin: 0 43px 0 0; }
 .listpage { margin: 80px 0 130px 0; }
 .listpage h2 {  text-transform: uppercase; }
 
-.listitems { color: #a7a9ab; width: 65.8536585366%; }
+.listitems { color: #000; width: 65.8536585366%; }
 .listitems h3 { font-weight: 400; font-size: 22px; width: 105px; float: left; margin: 0; }
 .listitems p { margin-left: 105px; }
-.listitems .itemtitle { color: #000; }
-.listitems a .itemtitle { color: #000; }
-
+.listitems a { color: #a7a9ab; }
+.listitems a:hover { color: #000; }
+	
 /* Flickity */
 
 .flickity-enabled { position: relative; }
