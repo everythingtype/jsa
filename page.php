@@ -5,7 +5,9 @@
 			<div class="edgemargin">
 			<div class="pagecontent">
 
-				<h2><?php the_title(); ?></h2>
+				<?php if ( !is_page('contact') ) :?>
+					<h2><?php the_title(); ?></h2>
+				<?php endif; ?>
 
 				<?php the_content(); ?>
 

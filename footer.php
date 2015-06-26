@@ -10,6 +10,8 @@
 
 </div><!-- layout -->
 
+</div><!-- minwidth -->
+
 <?php wp_footer(); ?>
 
 </body>

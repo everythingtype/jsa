@@ -47,23 +47,30 @@
 	function handleScroll() {
 	    scrollTimer = null;
 
-		$('.topheader').setScrollClass();
-
+		if ( $(".topheader").css("position") == "fixed" ) {
+			$('.topheader').setScrollClass();
+		}
 	}
 
 	function setMargin() {
 
-		var headertop = 0;
+		var topTitle = 0
 
-		if ($('#wpadminbar').length != 0) {
+		if ( $(".topheader").css("position") == "fixed" ) {
 
-			headertop =+ $('#wpadminbar').outerHeight();
+			var headertop = 0;
 
-			$('.wpadminbarspacer').css({'height': headertop + 'px'});
+			if ($('#wpadminbar').length != 0) {
 
+				headertop =+ $('#wpadminbar').outerHeight();
+
+				$('.wpadminbarspacer').css({'height': headertop + 'px'});
+
+			}
+
+			topTitle = $('.topheadermargin').outerHeight();
 		}
 
-		var topTitle = $('.topheadermargin').outerHeight();
 		$('.headerspacer').css({'height': topTitle + 'px'});
 
 	}
@@ -93,6 +100,7 @@
 	        clearTimeout(resizeTimer);   // clear any previous pending timer
 	    }
 	    resizeTimer = setTimeout(handleResize, 25);   // set new timer
+
 	});
 
 	$(window).scroll(function(){

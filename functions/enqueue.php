@@ -2,7 +2,7 @@
 
 function enqueue_scripts_method() {
 
-	$version = "h";
+	$version = "i";
 
 	// Remove Unnecessary Code
 	// http://www.themelab.com/2010/07/11/remove-code-wordpress-header/
@@ -30,6 +30,14 @@ function enqueue_scripts_method() {
 	$projectsjs = get_template_directory_uri() . '/js/project.js';
 	wp_register_script('projectsjs',$projectsjs, false, $version);
 
+	$googlemapsjs = 'https://maps.googleapis.com/maps/api/js?sensor=false';
+	wp_register_script('googlemapsjs',$googlemapsjs, false);
+
+	$mapjs = get_template_directory_uri() . '/js/map.js';
+	wp_register_script('mapjs',$mapjs, false, $version);
+
+
+
 	// Define CSS
 
 	$fontscss = get_stylesheet_directory_uri() . '/fonts/fonts.css';
@@ -52,6 +60,12 @@ function enqueue_scripts_method() {
 	if ( is_singular('jsa_projects') ) :
 		wp_enqueue_script( 'projectsjs',array('jquery'));
 	endif;
+	
+	if ( is_page('contact') ) :
+		wp_enqueue_script( 'googlemapsjs');
+		wp_enqueue_script( 'mapjs',array('googlemapsjs'));
+	endif;
+
 }
 
 add_action('wp_enqueue_scripts', 'enqueue_scripts_method');

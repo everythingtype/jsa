@@ -28,6 +28,8 @@
 </head>
 <body>
 
+<div class="minwidth">
+
 <?php if ( is_home() || is_front_page() ) get_template_part('parts/splash'); ?>
 
 <div class="topheader">
@@ -36,7 +38,7 @@
 
 	<div class="topheadermargin">
 
-		<h1><a href="/"><?php get_template_part('parts/logo'); ?><span>Joel Sanders Architect</span></a></h1>
+		<h1><a href="/home/"><?php get_template_part('parts/logo'); ?><span>Joel Sanders Architect</span></a></h1>
 
 		<div class="nav">
 
@@ -53,7 +55,10 @@
 		</div>
 
 	</div>
+
 </div>
+
+
 
 <div class="layout">
 

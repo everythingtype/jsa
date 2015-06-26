@@ -4,6 +4,7 @@
 	<div class="indextemplate">
 		<div class="edgemargin">
 			<?php while (have_posts()) : the_post(); ?>
+				<div class="post">
 				<div class="postcontent">
 					<?php if ( is_single() ) : ?>
 						<h2><?php the_title(); ?></h2>
@@ -30,7 +31,16 @@
 					<?php the_content(); ?>
 
 				</div>
-				<div class="sociallinks">
+				<div class="socialmedia">
+					<h4>Share</h4>
+					<ul>
+						<?php $url = get_permalink(); ?>
+						<li><a href="http://twitter.com/?status=<?php echo $url; ?>">Twitter</a></li>
+						<li><a href="http://www.facebook.com/share.php?u=<?php echo $url; ?>">Facebook</a></li>
+						<li><a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=<?php echo $url; ?>">LinkedIn</a></li>
+						<li><a href="https://plus.google.com/share?url=<?php echo $url; ?>">Google+</a></li>
+					</ul>
+				</div>
 				</div>
 			<?php endwhile; ?>
 		</div>
