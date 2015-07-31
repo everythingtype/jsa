@@ -29,22 +29,22 @@ get_header(); ?>
 					<?php if ( $heading == 'institutional' ) : ?>
 						<a href="<?php echo get_site_url(); ?>/projects/institutional/">
 							<?php spellerberg_the_image($image,'carousel_phoneplus'); ?>
-							<div class="carousellabel"><img src="<?php echo get_stylesheet_directory_uri() ?>/images/label-institutional.svg" alt="Institutional" /></div>
+							<div class="carousellabel"><?php get_template_part('parts/svg-institutional'); ?></div>
 						</a>
 					<?php elseif ( $heading == 'residential' ) : ?>
 						<a href="<?php echo get_site_url(); ?>/projects/residential/">
 							<?php spellerberg_the_image($image,'carousel_phoneplus'); ?>
-							<div class="carousellabel"><img src="<?php echo get_stylesheet_directory_uri() ?>/images/label-residential.svg" alt="Residential" /></div>
+							<div class="carousellabel"><?php get_template_part('parts/svg-residential'); ?></div>
 						</a>
 					<?php elseif ( $heading == 'public' ) : ?>
 						<a href="<?php echo get_site_url(); ?>/projects/public-space/">
 							<?php spellerberg_the_image($image,'carousel_phoneplus'); ?>
-							<div class="carousellabel"><img src="<?php echo get_stylesheet_directory_uri() ?>/images/label-publicspace.svg" alt="Public Space" /></div>
+							<div class="carousellabel"><?php get_template_part('parts/svg-publicspace'); ?></div>
 						</a>
 					<?php else : // living ?>
 						<a href="<?php echo get_site_url(); ?>/research/living-working/">
 							<?php spellerberg_the_image($image,'carousel_phoneplus'); ?>
-							<div class="carousellabel"><img src="<?php echo get_stylesheet_directory_uri() ?>/images/label-living.svg" alt="Living and Working" /></div>
+							<div class="carousellabel"><?php get_template_part('parts/svg-living'); ?></div>
 						</a>
 					<?php endif; ?>
 				</div>

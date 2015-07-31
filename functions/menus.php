@@ -77,7 +77,7 @@ class jsa_WP_Nav_Menu_Widget extends WP_Widget {
 
 		if ( is_front_page () || is_singular('jsa_projects') ) :
 			$depth = 1;
-		elseif ( is_tax( 'jsa_project_categories' ) || is_category( 'books' ) || is_page() ) :
+		elseif ( is_tax( 'jsa_project_categories' ) || is_category( 'books' ) || is_page() || is_single() ) :
 			$depth = 3;
 		else:
 			$depth = 2;
@@ -266,8 +266,5 @@ class JSA_Walker extends Walker_Nav_Menu {
 		 return $output;
 
 	}
-
-
-
 
 }

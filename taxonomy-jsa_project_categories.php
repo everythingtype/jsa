@@ -1,7 +1,7 @@
 <?php get_header();
 
 global $query_string;
-query_posts( $query_string . '&posts_per_page=-1' . '&order=DESC' . '&orderby=menu_order' ); 
+query_posts( $query_string . '&posts_per_page=-1' . '&order=DESC' . '&orderby=menu_order+title' ); 
 
 ?>
 

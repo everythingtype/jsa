@@ -73,7 +73,7 @@ get_header(); ?>
 									echo '>';
 								endif;
 
-								if ( $item_title ) echo $item_title;
+								if ( $item_title ) echo '<span>' . $item_title . '</span>';
 
 								if ( $item_title && $item_subtitle) echo '<br />';
 

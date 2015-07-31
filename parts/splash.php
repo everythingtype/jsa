@@ -11,9 +11,6 @@
 <div class="splash">
 
 	<div class="tagline">
-		<span class="line">Architecture for</span>
-		<span class="line">Institutions, Residences</span>
-		<span class="line">and Public Space</span>
-		<span class="readmore">Read More</span>
+		<span class="readmore">Welcome</span>
 	</div>
 </div>

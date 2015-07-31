@@ -1,5 +1,8 @@
 <?php
 
+// Image linking in content is lame
+update_option('image_default_link_type','none');
+
 // Featured Images
 
 add_theme_support( 'post-thumbnails' );
@@ -63,9 +66,17 @@ function spellerberg_featuredimage_caption($post_id) {
 
 }
 
-//http://speakinginbytes.com/2012/11/responsive-images-in-wordpress/
+// http://speakinginbytes.com/2012/11/responsive-images-in-wordpress/
+// https://gist.github.com/stuntbox/4557917
 function remove_thumbnail_dimensions( $html ) {
-    $html = preg_replace( '/(width|height)=\"\d*\"\s/', "", $html );
+
+	if (preg_match_all('/<img[^>]+>/ims', $html, $matches)) {
+		foreach ($matches as $match) {
+			$clean = preg_replace('/(width|height)=["\'\d%\s]+/ims', "", $match); // Replace all occurences of width/height
+			$html = str_replace($match, $clean, $html); // Replace with result within html
+		}
+	}
+
     return $html;
 }
 

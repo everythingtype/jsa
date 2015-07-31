@@ -54,6 +54,9 @@
 
 		if ( $( ".splash" ).length ) {
 			$(".scroll").openLightbox();
+
+			$('.splash').delay(5000).closeLightbox();
+
 		}
 
 		$('.carousel').flickity({

@@ -31,6 +31,7 @@
 					<?php the_content(); ?>
 
 				</div>
+
 				<div class="socialmedia">
 					<h4>Share</h4>
 					<ul>
@@ -41,7 +42,12 @@
 						<li><a href="https://plus.google.com/share?url=<?php echo $url; ?>">Google+</a></li>
 					</ul>
 				</div>
+
+				<?php if ( is_single() ) get_template_part('parts/backtobooks'); ?>
+
+
 				</div>
+
 			<?php endwhile; ?>
 		</div>
 	</div>
