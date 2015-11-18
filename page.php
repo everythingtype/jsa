@@ -1,29 +1,39 @@
-<?php
-/**
- * The template for displaying all pages.
- *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site will use a
- * different template.
- *
- * @package JSA
- */
+<?php get_header(); ?>
+<?php if (have_posts()) : ?>
+	<div class="pagetemplate">
+		<?php while (have_posts()) : the_post(); ?>
+			<div class="edgemargin">
+			<div class="pagecontent">
 
-get_header(); ?>
+				<?php if ( !is_page('contact') ) :?>
+					<h2><?php the_title(); ?></h2>
+				<?php endif; ?>
 
-<div class="col-width">
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+				<?php the_content(); ?>
 
-			<?php while ( have_posts() ) : the_post(); ?>
+			</div>
+		</div>
 
-				<?php get_template_part( 'content', 'page' ); ?>
+			<?php 
+				$related = p2p_type('pages_to_jsa_projects')->get_connected(); 
 
-			<?php endwhile; // end of the loop. ?>
+				if ( $related->have_posts() ) : ?>
+				<div class="edgemargin">
+					<h2>Related Projects</h2>
+				</div>
+					<div class="grid">
+					<?php while ( $related->have_posts() ) : 
+						$related->the_post();
+						get_template_part('parts/griditem');
+					endwhile;
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
-</div>
+					wp_reset_postdata(); 
+			?>
+					</div>
+			<?php endif; ?>
 
+
+		<?php endwhile; ?>
+	</div>
+<?php endif; ?>
 <?php get_footer(); ?>
