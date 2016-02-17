@@ -6,7 +6,10 @@
 	<?php while (have_posts()) : the_post(); ?>
 		<?php if( have_rows('slides') ): ?>
 			<div class="slides">
-			<?php $i = 0; ?>
+			<?php 
+				$i = 0; 
+				$sizeguidance = '(min-width: 1024px) 2048px, 1024px';
+			?>
 			<?php while ( have_rows('slides') ) : the_row(); ?>
 
 				<?php $slide_layout = get_sub_field('slide_layout'); ?>
@@ -19,7 +22,9 @@
 						<?php if ( $image ) : ?>
 								<?php $i++; ?>
 								<a href="#slide<?php echo $i; ?>" class="nextslide">
-									<?php spellerberg_the_image($image,'phoneplus'); ?>
+									<?php 
+										spellerberg_the_image($image,'phoneplus',$sizeguidance); 
+									?>
 								</a>
 						<?php endif; ?>
 

@@ -110,7 +110,7 @@
 	    if (scrollTimer) {
 	        clearTimeout(scrollTimer);   // clear any previous pending timer
 	    }
-	    scrollTimer = setTimeout(handleScroll, 50);   // set new timer
+	    scrollTimer = setTimeout(handleScroll, 1);   // set new timer
 
 	});
 

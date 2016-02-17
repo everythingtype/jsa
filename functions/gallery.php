@@ -15,10 +15,10 @@ add_image_size( 'phoneplus', 1334 );
 add_image_size( 'padretina', 2048 );
 
 add_image_size( 'thumb', 285, 180, true );
+add_image_size( 'thumb_jsa_1x', 390, 245, true );
+add_image_size( 'thumb_jsa_2x', 780, 490, true );
 add_image_size( 'thumb_padmini', 1024, 646, true  );
 add_image_size( 'thumb_phone', 1136, 717, true  );
-add_image_size( 'thumb_phoneplus', 1334, 842, true  );
-add_image_size( 'thumb_padretina', 2048, 1293, true  );
 
 add_image_size( 'carousel', 285, 141, true );
 add_image_size( 'carousel_padmini', 1024, 505, true  );
@@ -37,7 +37,7 @@ function spellerberg_this_sites_sizesets() {
 	// Custom sizes as defined via add_image_size, 
 	// grouped into sets appropriate for srcset,
 	// ordered from smallest to largest.
-	$sets[] = Array('thumb','thumb_padmini','thumb_phone','thumb_phoneplus','thumb_padretina');
+	$sets[] = Array('thumb','thumb_jsa_1x','thumb_jsa_2x','thumb_padmini','thumb_phone');
 	$sets[] = Array('carousel','carousel_padmini','carousel_phone','carousel_phoneplus','carousel_padretina');	
 	$sets[] = Array('padmini','phone','phoneplus','padretina');	
 

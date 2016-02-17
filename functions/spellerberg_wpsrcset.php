@@ -1,34 +1,45 @@
 <?php
 
-// Version: 2015.04.07
+// Version: 2012.02.16
 
 // The why: http://ericportis.com/posts/2014/srcset-sizes/
 // The how: https://mattwilcox.net/web-development/keeping-srcset-and-sizes-under-control
 
 function spellerberg_get_image($imageid,$fallbacksize = 'full',$sizeguidance = '') {
 
-	$sizeset = spellerberg_size_set($fallbacksize);
-	
-	$fallback = wp_get_attachment_image_src( $imageid, $fallbacksize);
-	
+	$attachment = get_post($imageid);
+
 	$alt_text = get_post_meta($imageid, '_wp_attachment_image_alt', true);
-	
+
 	if ( !$alt_text || $alt_text == "" ) :
-		$attachment = get_post($imageid);
 		$alt_text = $attachment->post_title;
 	endif;
 
-	if ( $sizeguidance != '' ) :
-	 	$sizesattr = 'sizes="' . $sizeguidance . '" ';
-	else :
-		$sizesattr = spellerberg_sizesattr($imageid,$fallbacksize);
-	endif;
+	if ( $attachment->post_mime_type == "image/jpeg" ) :
 
-	$output = '<img ';	
-	$output .= $sizesattr;
-	$output .= spellerberg_srcsetattr( $imageid,$fallbacksize);
-	$output .= 'src="' . $fallback[0] . '" ';
-	$output .= 'alt="' . $alt_text . '">';
+		$sizeset = spellerberg_size_set($fallbacksize);
+	
+		$fallback = wp_get_attachment_image_src( $imageid, $fallbacksize);
+	
+		if ( $sizeguidance != '' ) :
+		 	$sizesattr = 'sizes="' . $sizeguidance . '" ';
+		else :
+			$sizesattr = spellerberg_sizesattr($imageid,$fallbacksize);
+		endif;
+
+		$output = '<img ';	
+		$output .= $sizesattr;
+		$output .= spellerberg_srcsetattr( $imageid,$fallbacksize);
+		$output .= 'src="' . $fallback[0] . '" ';
+		$output .= 'alt="' . $alt_text . '" />';
+	
+	else:
+
+		$fallback = wp_get_attachment_image_src( $imageid, 'full');
+
+		$output = '<img src="' . $fallback[0] . '" alt="' . $alt_text . '" />';
+
+	endif;
 	
 	return $output;
 
@@ -77,7 +88,7 @@ function spellerberg_sizesattr($imageid,$fallbacksize) {
 
 function spellerberg_srcsetattr( $imageid, $fallbacksize) {
 
-	$output = '';
+	$output == '';
 
 	$sizes = spellerberg_size_set($fallbacksize);
 
@@ -104,4 +115,3 @@ function spellerberg_size_set($keyword) {
 
 }
 
-?>
