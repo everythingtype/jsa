@@ -122,7 +122,7 @@ get_header(); ?>
 	</div>
 
 	<div class="edgemargin">
-		<a class="button" href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>">Read More News</a>
+		<a class="button" href="/category/news/">Read More News</a>
 	</div>
 
 </div>

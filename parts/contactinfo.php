@@ -12,8 +12,8 @@
 
 		<div id="map"></div>
 
-		<p><a href="https://www.google.com/maps/place/106+E+19th+St,+New+York,+NY+10003/" target="_blank"><span>New York</span><br />
-		106 East 19th Street, 2nd Floor<br />
+		<p><a href="https://www.google.com/maps/place/89+5th+Avenue,+New+York,+NY+10003/" target="_blank"><span>New York</span><br />
+		89 5th Avenue, Suite 301<br />
 		New York, NY 10003</a></p>
 
 	</div>
