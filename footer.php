@@ -1,6 +1,6 @@
 <footer>
 
-	<p>106 East 19th Street, 2nd Floor<br />
+	<p>89 5th Avenue, Suite 301<br />
 		New York, NY 10003</p>
 
 		<p><a href="mailto:info@joelsandersarchitect.com">info@joelsandersarchitect.com</a><br />
