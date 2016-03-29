@@ -22,37 +22,40 @@ get_header(); ?>
 				$image = get_sub_field('image_alternate'); 
 			endif;
 
-			if ( $image ) : ?>
-				<div class="carousel-cell">
-					<?php $heading = get_sub_field('heading'); ?>
+			$image_src = wp_get_attachment_image_src($image,'carousel_phoneplus');
+			
+			if ( $image ) : 
 
-					<?php if ( $heading == 'institutional' ) : ?>
-						<a href="<?php echo get_site_url(); ?>/projects/institutional/">
-							<?php spellerberg_the_image($image,'carousel_phoneplus'); ?>
-							<div class="carousellabel"><?php get_template_part('parts/svg-institutional'); ?></div>
-						</a>
-					<?php elseif ( $heading == 'residential' ) : ?>
-						<a href="<?php echo get_site_url(); ?>/projects/residential/">
-							<?php spellerberg_the_image($image,'carousel_phoneplus'); ?>
-							<div class="carousellabel"><?php get_template_part('parts/svg-residential'); ?></div>
-						</a>
-					<?php elseif ( $heading == 'public' ) : ?>
-						<a href="<?php echo get_site_url(); ?>/projects/public-space/">
-							<?php spellerberg_the_image($image,'carousel_phoneplus'); ?>
-							<div class="carousellabel"><?php get_template_part('parts/svg-publicspace'); ?></div>
-						</a>
-					<?php else : // living ?>
-						<a href="<?php echo get_site_url(); ?>/research/living-working/">
-							<?php spellerberg_the_image($image,'carousel_phoneplus'); ?>
-							<div class="carousellabel"><?php get_template_part('parts/svg-living'); ?></div>
-						</a>
-					<?php endif; ?>
+					$heading = get_sub_field('heading'); 
+
+					if ( $heading == 'institutional' ) :
+						$href = '/projects/institutional/';
+						$label = 'Institutional';
+					elseif ( $heading == 'residential' ) : 
+						$href = '/projects/residential/';
+						$label = 'Residential';
+					elseif ( $heading == 'public' ) :
+						$href = '/projects/public-space/';
+						$label = 'Public Space';
+					else : // living
+						$href = '/projects/living-working/';
+						$label = 'Living and Working';
+					endif;
+
+				?>
+				<div class="carousel-cell">
+					<a href="<?php echo get_site_url() . $href; ?>" style="background-image: url('<?php echo $image_src[0]; ?>');"></a>
+					<div class="carousellabel"><?php echo $label; ?></div>
 				</div>
 			<?php endif; ?>
 		<?php endwhile; ?>
+
+		<div class="downlink"><a href="#mission">&darr;</a></div>
+
 		</div>
 	<?php endif; ?>
 
+	<a id="mission"></a>
 	<div class="edgemargin">
 		<div class="homemission">
 			<?php the_content(); ?>

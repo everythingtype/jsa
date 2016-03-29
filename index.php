@@ -24,8 +24,28 @@
 						<?php endif;?>
 					</div>
 
-					<?php if ( has_post_thumbnail() ) : ?>
-						<p><?php spellerberg_the_thumbnail($post->ID,'phoneplus'); ?></p>
+					<?php 
+					$image_gallery = get_field('image_gallery');
+					
+					if ( $image_gallery ) : 
+						wp_enqueue_script( 'flickityjs',array('jquery'));
+						wp_enqueue_script( 'postgalleryjs',array('jquery','flickityjs'));
+						
+						?>
+						<div class="postgallery">
+						<?php foreach ( $image_gallery as $image ) :?>
+							<div class="postimage">
+								<div class="ratio"></div>
+								<div class="inner">
+									<?php spellerberg_the_image($image['id'],'phoneplus'); ?>
+								</div>
+							</div>
+						<?php endforeach; ?>
+						</div>
+					<?php else: ?>
+						<?php if ( has_post_thumbnail() ) : ?>
+							<p><?php spellerberg_the_thumbnail($post->ID,'phoneplus'); ?></p>
+						<?php endif; ?>
 					<?php endif; ?>
 
 					<?php the_content(); ?>

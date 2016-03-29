@@ -2,7 +2,7 @@
 
 function enqueue_scripts_method() {
 
-	$version = "m";
+	$version = "v";
 
 	// Remove Unnecessary Code
 	// http://www.themelab.com/2010/07/11/remove-code-wordpress-header/
@@ -36,7 +36,8 @@ function enqueue_scripts_method() {
 	$mapjs = get_template_directory_uri() . '/js/map.js';
 	wp_register_script('mapjs',$mapjs, false, $version);
 
-
+	$postgalleryjs = get_template_directory_uri() . '/js/postgallery.js'; // Is enqued in template files
+	wp_register_script('postgalleryjs',$postgalleryjs, false, $version);
 
 	// Define CSS
 
@@ -61,7 +62,7 @@ function enqueue_scripts_method() {
 		wp_enqueue_script( 'projectsjs',array('jquery'));
 	endif;
 	
-	if ( is_page('contact') ) :
+	if ( is_page_template('page-contact.php') ) :
 		wp_enqueue_script( 'googlemapsjs');
 		wp_enqueue_script( 'mapjs',array('googlemapsjs'));
 	endif;

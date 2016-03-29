@@ -16,6 +16,8 @@ function register_custom_menus() {
 	register_nav_menu('contact', __('Contact Primary'));
 	register_nav_menu('contactsecondary', __('Contact Secondary'));
 
+	register_nav_menu('mobilenav', __('Mobile'));
+
 }
 
 add_action('init', 'register_custom_menus');
@@ -38,6 +40,17 @@ function my_register_sidebars() {
 		array(
 			'id' => 'secondarynav',
 			'name' => __( 'About Secondary Navigation' ),
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget' => '</div>',
+			'before_title' => '<h4>',
+			'after_title' => '</h4>'
+		)
+	);
+
+	register_sidebar(
+		array(
+			'id' => 'mobilenav',
+			'name' => __( 'Mobile Navigation' ),
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
 			'after_widget' => '</div>',
 			'before_title' => '<h4>',

@@ -67,7 +67,7 @@ function jsa_p2p_register_connections() {
 		'name' => 'jsa_projects_to_jsa_projects',
 		'from' => 'jsa_projects',
 		'to' => 'jsa_projects',
-		'reciprocal' => true,
+		'reciprocal' => false,
 		'title' => array(
 		    'from' => __( 'Related Projects', 'jsa' ),
 		    'to' => __( 'Related Projects', 'jsa' )
