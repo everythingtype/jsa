@@ -1,0 +1,16 @@
+<?php elseif ( $slide_layout == 'video' ) : ?>
+
+	<?php 
+
+	$embed = get_sub_field('embed'); 
+	$image = get_sub_field('image'); 
+
+	 if ( $embed && $image ) : 
+		$fallback = wp_get_attachment_image_src( $image,'phoneplus');
+		
+		?>
+		<div class="videomargin">
+			<?php // echo do_shortcode('[fve]' . $embed . '[/fve]'); ?>
+			<div class="videoimage" style="background-image: url('<?php echo $fallback[0]; ?>');"><div class="playbutton"></div></div>
+		</div>
+	<?php endif; ?>

@@ -1,36 +1,65 @@
+// JSA Project
+
 (function($) {
 
 	jQuery.fn.setSlideHeight = function(contentheight) {
 
-		$(this).css({
-			'height': contentheight +'px',
-		});
+		if ( projectIsLarge() ) {
 
-		$(this).find('.slideinner').css({
-			'max-height': contentheight +'px',
-		});
+			$(this).css({
+				'height': contentheight +'px',
+			});
 
-		$(this).find('img').css({
-			'max-height': contentheight +'px',
-		});
+			$(this).find('.slideinner').css({
+				'max-height': contentheight +'px',
+			});
 
-		console.log('hi');
+			$(this).find('img').css({
+				'max-height': contentheight +'px',
+			});
+
+		} else {
+
+			$(this).css({
+				'height': 'auto',
+			});
+
+			$(this).find('.slideinner').css({
+				'max-height': 'auto',
+			});
+
+			$(this).find('img').css({
+				'max-height': 'auto',
+			});
+
+		}
 
 	}
 
-	function toggleInfoLink() {
-		if ( $('#infolink').hasClass('active') ) {
-			$('#infolink').removeClass('active');			
-			$('#infolink').html('Info');
-			$('.slides').show();
+	function projectIsLarge() {
+		if ( $(".projectcue").css("float") == "right" ) { 
+			return true;
 		} else {
-			$('#infolink').addClass('active');
-			$('#infolink').html('Close Info');
-			$('.slides').hide();
+			return false;
 		}
+	}
 
-        $('html,body').scrollTop(0);
 
+	function setupDescription() {
+		$('.projectdescription p').first().append(' <a class="readtoggle readmore">Read More</a>');
+		$('.projectdescription p').last().append(' <a class="readtoggle readless">Read Less</a>');
+		readLess();
+	}
+
+	function readMore() {
+		$('.projectdescription .readmore').hide();
+		$('.projectdescription p').show();
+	}
+
+	function readLess() {
+		$('.projectdescription p').hide();
+		$('.projectdescription p').first().show();
+		$('.projectdescription .readmore').show();
 	}
 
 	function setHeights() {
@@ -58,19 +87,25 @@
 
 	}
 
-	$(window).resize(function() {
-	  setHeights();
-	});
-
 	$(document).ready(function() {
+
+		setupDescription();
 
 		setHeights();
 
-		$('#infolink').on('click', function( event ) {
-			event.preventDefault();
-			toggleInfoLink();
+		$('.readmore').on('click', function() {
+			readMore();
 		});
 
+		$('.readless').on('click', function() {
+			readLess();
+		});
+
+
+	});
+
+	$(window).resize(function() {
+	  setHeights();
 	});
 
 
@@ -97,6 +132,7 @@
 	      }
 	    }
 	  });
+
 	});
 
 })(jQuery);

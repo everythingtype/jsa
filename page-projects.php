@@ -4,22 +4,36 @@
 
 get_header(); ?>
 <div class="projectcategory">
-<div class="grid">
-<?php
 
-$projects = get_posts(array(
-	'post_type' => 'jsa_projects',
-	'posts_per_page' => -1,
-	'order' => 'DESC',
-	'orderby' => 'menu_order'
-));
+	<h2 class="mobiletitle"><?php the_title(); ?></h2>
 
-foreach ( $projects as $post ) : 
-	setup_postdata( $post ); 
-	get_template_part('parts/griditem');
-endforeach;
+	<?php if( have_rows('projects') ): ?>
 
-?>
+		<div class="grid">
+
+			<?php while ( have_rows('projects') ) : the_row(); ?>
+
+			<?php
+
+				$project_object = get_sub_field('project');
+				$post = $project_object;
+				setup_postdata( $post );
+
+//				print_r($post);
+
+				get_template_part('parts/griditem');
+
+				wp_reset_postdata();
+
+
+			?>
+
+			<?php endwhile; ?>
+
+		</div>
+
+	<?php endif; ?>
+
 </div>
-</div>
+
 <?php get_footer(); ?>

@@ -6,6 +6,9 @@ get_header(); ?>
 <div class="researchpage">
 <?php if (have_posts()) : ?>
 	<?php while (have_posts()) : the_post(); ?>
+
+		<h2 class="mobiletitle"><?php the_title(); ?></h2>
+
 		<?php if( have_rows('columns') ): ?> 
 			<div class="grid columngrid">
 			<?php while ( have_rows('columns') ) : the_row(); ?>

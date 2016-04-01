@@ -12,6 +12,8 @@
 		echo ' &ndash; ' . sprintf( __( 'Page %s' ), max( $paged, $page ) );
 	?></title>
 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 	<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri() ?>/images/favicons/favicon.ico">
 	<link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_stylesheet_directory_uri() ?>/images/favicons/favicon-180.png" />
 	<link rel="apple-touch-icon" sizes="152x152" href="<?php echo get_stylesheet_directory_uri() ?>/images/favicons/favicon-152.png" />
@@ -28,7 +30,7 @@
 </head>
 <body>
 
-<div class="minwidth">
+<a id="top"></a>
 
 <?php if ( is_home() || is_front_page() ) get_template_part('parts/splash'); ?>
 
@@ -38,9 +40,11 @@
 
 	<div class="topheadermargin">
 
+		<div class="menutoggle"><span>Menu</span></div>
+
 		<h1><a href="/home/"><?php get_template_part('parts/logo'); ?><span>Joel Sanders Architect</span></a></h1>
 
-		<div class="nav">
+		<div class="nav <?php if ( is_singular('jsa_projects') ) echo 'projectsinglenav'; ?>">
 
 			<div class="secondarynav">
 				<?php dynamic_sidebar( 'secondarynav' ); ?>
@@ -50,7 +54,9 @@
 				<?php dynamic_sidebar('topnav'); ?>
 			</div>
 
-			<?php if ( is_singular('jsa_projects') ) get_template_part('parts/projecttitle'); ?>
+			<?php if ( is_singular('jsa_projects') ) : ?>
+				<h2><?php the_title(); ?></h2>
+			<?php endif; ?>
 
 		</div>
 
@@ -58,8 +64,7 @@
 
 </div>
 
-
-
+<div class="content-area">
 <div class="layout">
 
 <div class="headerspacer"></div>

@@ -1,19 +1,29 @@
-<?php
+<div class="projectscats">
+	<ul>
+	<?php
 
-$terms = get_the_terms( $post->ID, 'jsa_project_categories');
+	$terms = get_the_terms( $post->ID, 'jsa_project_categories');
 
-if ( $terms && ! is_wp_error( $terms ) ) : 
-	$backlink = get_term_link( $terms[0]->term_id, 'jsa_project_categories' );
-	$backlabel = $terms[0]->name;
-else:
-	$backlink = get_permalink( get_page_by_path( 'projects' ) );
-	$backlabel = 'Projects';
-endif;
+	if ( $terms && ! is_wp_error( $terms ) ) : 
 
-?>
+		foreach ( $terms as $term ) :
+		$backlink = get_term_link( $term->term_id, 'jsa_project_categories' );
+		$backlabel = $term->name; 
 
-<div class="backto">
-	<div class="edgemargin">
-		<a class="button" href="<?php echo $backlink; ?>"><span>&larr;</span> Back to <?php echo $backlabel; ?></a>
-	</div>
+	?>
+
+	<li><a href="<?php echo $backlink; ?>"><?php echo $backlabel; ?></a></li>
+
+	<?php endforeach; ?>
+<?php else: ?>
+
+	<?php 
+		$backlink = get_permalink( get_page_by_path( 'projects' ) );
+		$backlabel = 'Projects';
+	?>
+
+	<li><a href="<?php echo $backlink; ?>"><?php echo $backlabel; ?></a></li>
+
+<?php endif; ?>
+	</ul>
 </div>

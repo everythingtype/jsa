@@ -1,7 +1,7 @@
 
 <svg version="1.1"
 	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
-	 x="0px" y="0px" width="123px" height="54px" viewBox="-0.987 -1.038 123 54"
+	 x="0px" y="0px" viewBox="-0.987 -1.038 123 54"
 	 overflow="visible" enable-background="new -0.987 -1.038 123 54" xml:space="preserve">
 <defs>
 </defs>

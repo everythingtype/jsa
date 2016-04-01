@@ -6,6 +6,9 @@ query_posts( $query_string . '&posts_per_page=-1' . '&order=DESC' . '&orderby=me
 ?>
 
 <div class="projectcategory">
+
+	<h2 class="mobiletitle"><?php single_term_title(); ?></h2>
+
 <?php if (have_posts()) : ?>
 	<div class="grid">
 	<?php while (have_posts()) : the_post(); ?>
