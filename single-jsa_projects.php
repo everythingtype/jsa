@@ -76,7 +76,6 @@
 					</div>
 				<?php endif; ?>
 
-			<div class="downarrow"><a href="#slide-2">&darr;</a></div>
 			<?php $i++; ?>
 
 			</div>

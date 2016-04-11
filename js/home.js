@@ -112,13 +112,9 @@
 
 	$(document).ready( function() {
 
+		$(".scroll").openSplash();
+
 		setHomeHeights();
-
-		if ( $( ".splash" ).length ) {
-			$(".scroll").openSplash();
-		}
-
-		setTimeout(splashTimer, 9000); // Timer
 
 		$('.carousel').flickity({
 			cellSelector: '.carousel-cell',
@@ -135,10 +131,14 @@
 		$('.splash').on('click', function() {
 			$('.splash').closeSplash();
 		});
-		
+
+		setTimeout(splashTimer, 9000); // Timer
+
+
 	});
 
 	$(window).load(function(){
+		$('.splash').removeClass('loading');
 		setHomeHeights();
 	});
 
