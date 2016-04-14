@@ -24,7 +24,7 @@ function initMap() {
 
   nymarker = new google.maps.Marker({
     map: nymap,
-    icon: 'http://joelsandersarchitect.com/wp-content/uploads/2016/03/mapmarker.png',
+    icon: 'http://joelsandersarchitect.com/wp-content/uploads/2016/04/mapmarker.png',
     draggable: false,
     animation: google.maps.Animation.DROP,
     position: new google.maps.LatLng(40.7374296, -73.9921085)
@@ -45,7 +45,7 @@ function initMap() {
 
   shanghaimarker = new google.maps.Marker({
     map: shanghaimap,
-    icon: 'http://joelsandersarchitect.com/wp-content/uploads/2016/03/mapmarker.png',
+    icon: 'http://joelsandersarchitect.com/wp-content/uploads/2016/04/mapmarker.png',
     draggable: false,
     animation: google.maps.Animation.DROP,
     position: new google.maps.LatLng(40.7374296, -73.9921085)
@@ -66,7 +66,7 @@ function initMap() {
 
   dubaimarker = new google.maps.Marker({
     map: dubaimap,
-    icon: 'http://joelsandersarchitect.com/wp-content/uploads/2016/03/mapmarker.png',
+    icon: 'http://joelsandersarchitect.com/wp-content/uploads/2016/04/mapmarker.png',
     draggable: false,
     animation: google.maps.Animation.DROP,
     position: new google.maps.LatLng(40.737874, -73.987902)

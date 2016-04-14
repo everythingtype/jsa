@@ -46,9 +46,17 @@
 
 
 	function setupDescription() {
-		$('.projectdescription p').first().append(' <a class="readtoggle readmore">Read More</a>');
-		$('.projectdescription p').last().append(' <a class="readtoggle readless">Read Less</a>');
-		readLess();
+
+		paragraphs = $('.projectdescription p').length;
+
+		if ( paragraphs > 1) {
+
+			$('.projectdescription p').first().append(' <a class="readtoggle readmore">Read More</a>');
+			$('.projectdescription p').last().append(' <a class="readtoggle readless">Read Less</a>');
+			readLess();
+
+		}
+
 	}
 
 	function readMore() {

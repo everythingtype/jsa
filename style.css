@@ -1,4 +1,4 @@
-/*
+a/*
 Theme Name: Joel Sanders Architect
 Theme URI: http://github.com/everythingtype/jsa
 Author: Spellerberg Associates
@@ -16,7 +16,8 @@ body:after{ display:none; content: url('images/nextarrow-white.svg') url('images
 body { font-family: "Calibre", sans-serif; font-weight: 400; font-size: 16px; line-height: 1.1818181818; letter-spacing: 0.02em; margin: 0; padding: 0; background: #fff; color: #000; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; }
 body.haslightbox { overflow: hidden; }
 
-
+::-moz-selection { color: #fff; background: #000; }
+::selection { color: #fff; background: #000; }
 
 a { color: #808284; text-decoration: none; }
 a:hover { color: #000; }
@@ -28,10 +29,9 @@ h3 { font-size: 20px; font-weight: 400; text-transform: uppercase; margin: 1em 0
 h4 { font-size: 16px; font-weight: 400; margin: 0; }
 
 p { text-align: left !important; }
-p::selection { background: #000; color: #fff; }
-p::-moz-selection { background: #000; color: #fff; }
-a::selection { background: #000; color: #fff; }
-a::-moz-selection { background: #000; color: #fff; }
+
+::selection { background: #000; color: #fff; }
+::-moz-selection { background: #000; color: #fff; }
 
 h3 + p { margin-top: 0; }
 
@@ -137,7 +137,7 @@ h2.mobiletitle { margin: 0 25px 1em 25px; text-transform: uppercase; }
 .lightbox .border { border-top: 1px solid #000; position: absolute; top: 0; right: 29px; left: 29px; }
 
 .mobilenav { clear: both; font-size: 20px; line-height: 1.2884615385; padding-bottom: 17px; margin: 0 29px;}
-.mobilenav a { color: #808284; }
+.mobilenav a { color: #808284; display: block; margin-right: 30px; }
 .mobilenav ul {  list-style: none; margin: 0; padding: 0;  }
 .mobilenav li { border-top: 1px solid #808284; margin: 0; padding: 10px 0 2px 0; text-transform: uppercase; }
 .mobilenav li:first-child { border-top: none; } 
@@ -147,7 +147,6 @@ h2.mobiletitle { margin: 0 25px 1em 25px; text-transform: uppercase; }
 .mobilenav li.active > a { color: #000; }
 
 .navarrow { float: right; cursor: pointer; font-size: 17px; padding: 0 0 0 .5em; font-family: "Icons"; position: relative; margin-top: -1px; }
-.navarrow:hover { color: #000; }
 
 @media screen and (min-width: 1120px) {
 
@@ -337,6 +336,8 @@ footer p { margin: 0 0 1em 0; }
 
 .relatedprojects { padding-top: 175px; }
 
+.relatedprojects .griditem:nth-child(n+3) { display: none; }
+
 @media screen and (min-width: 1120px) {
 
 	.projectsingle { margin-bottom: 130px; }
@@ -359,6 +360,8 @@ footer p { margin: 0 0 1em 0; }
 	.projectmeta ul { margin: 0; float: left; }
 
 	.projectscats { float: left; padding: 10px 0 13px 0; margin: 0.83em 0 0.83em 1em;}
+
+	.relatedprojects .griditem:nth-child(n+3) { display: block; }
 
 }
 

@@ -49,43 +49,61 @@
 
 		$(this).slideUp(1000, function() {
 			// Complete
-			if ( !homeIsMobile		() ) {
+			if ( !homeIsMobile() ) { 
 				window.history.replaceState("", "Home", "/home/");
 			}
 		});
 
+	}
+
+	jQuery.fn.removeSplash = function() {
+
+		if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+
+			$('.content-area').css({
+			    'top': "auto",
+			    'position':'static'
+			});
+
+		}
+
+		$('body').removeClass('haslightbox');
+
+		$(this).hide();
 
 	}
+
 
 	function setHomeHeights() {
 
 		var windowheight = window.innerHeight;
-
+		
 		var wpadminbar = 0; 
 		if ($('#wpadminbar').length != 0) {
 			wpadminbar = $('#wpadminbar').outerHeight();
 		}
-
+		
 		var splashheight = windowheight - wpadminbar; 
-
+		
 		$('.splashinner').css({'height': splashheight + 'px'});
-
+		
 		if ( homeIsMobile() ) { 
-
+				
+			$('.splash').removeSplash();
 			$('.carousel-cell a').css({'height': 'auto'});
-
+		
 		} else {
-
+		
 			var topTitle = 0
 			topTitle = $('.topheadermargin').outerHeight();
-
+		
 			$('#mission').css({'top': '-' + topTitle + 'px'});
-
+		
 			var carouselheight = windowheight - wpadminbar - topTitle;
-
+		
 			$('.carousel-cell a').css({'height': carouselheight + 'px'});
-
-
+		
+		
 		}
 
 	}
@@ -102,12 +120,18 @@
 		$('.splash').closeSplash();
 	}
 
-	function resetHomeSlides() {
+	function handleHomeScroll() {
+
 		if ( homeIsMobile() ) {
+
 			$('.carousel-cell').css({
 			    'left': 'auto',
 			});
+
 		}
+
+		setHomeHeights();
+
 	}
 
 	$(document).ready( function() {
@@ -143,8 +167,7 @@
 	});
 
 	$(window).resize(function(){
-		setHomeHeights();
-		resetHomeSlides();
+		handleHomeScroll();
 	});
 
 

@@ -27,18 +27,6 @@
 		<a id="slide-1" class="slideanchor"></a>
 		<div class="projectdetails">
 
-			<?php $description_image = get_field('description_image'); ?>
-			<?php if ( $description_image ) : ?>
-			<div class="descriptionimage">
-				<div class="imagebox">
-					<div class="ratio"></div>
-					<div class="inner">
-						<?php spellerberg_the_image($description_image,'phoneplus'); ?>
-					</div>
-				</div>
-			</div>
-			<?php endif; ?>
-
 			<div class="projectdescription">
 				<?php 
 					the_content(); 
@@ -76,9 +64,21 @@
 					</div>
 				<?php endif; ?>
 
-			<?php $i++; ?>
-
 			</div>
+
+			<?php $i++; ?>
+			<?php $description_image = get_field('description_image'); ?>
+			<?php if ( $description_image ) : ?>
+			<div class="descriptionimage">
+				<div class="imagebox">
+					<div class="ratio"></div>
+					<div class="inner">
+						<a href="#slide-<?php echo $i; ?>" class="nextslide"><?php spellerberg_the_image($description_image,'phoneplus'); ?></a>
+					</div>
+				</div>
+			</div>
+			<?php endif; ?>
+
 		</div>
 
 		<?php if( have_rows('slides') ): ?>
