@@ -28,6 +28,7 @@
 		<div class="projectdetails">
 
 			<?php $description_image = get_field('description_image'); ?>
+			<!--<?php echo $description_image ?> -->
 			<?php if ( $description_image ) : ?>
 			<div class="descriptionimage">
 				<div class="imagebox">

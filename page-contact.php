@@ -30,6 +30,8 @@ get_header(); ?>
 
 				</div>
 
+<!--
+
 				<h3>Other Offices</h3>
 
 				<div class="shanghailocation">
@@ -51,6 +53,8 @@ get_header(); ?>
 					New York, NY 10003</a></p>
 
 				</div>
+
+-->
 
 			</div>
 
