@@ -46,9 +46,17 @@
 
 
 	function setupDescription() {
-		$('.projectdescription p').first().append(' <a class="readtoggle readmore">Read More</a>');
-		$('.projectdescription p').last().append(' <a class="readtoggle readless">Read Less</a>');
-		readLess();
+
+		paragraphs = $('.projectdescription p').length;
+
+		if ( paragraphs > 1) {
+
+			$('.projectdescription p').first().append(' <a class="readtoggle readmore">Read More</a>');
+			$('.projectdescription p').last().append(' <a class="readtoggle readless">Read Less</a>');
+			readLess();
+
+		}
+
 	}
 
 	function readMore() {
@@ -102,37 +110,47 @@
 		});
 
 
+		$('a.nextslide').click(function(e) {
+
+			console.log('hi there');
+
+			if ( projectIsLarge() ) {
+
+				var target = $(this.hash);
+				target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+
+				if (target.length) {
+
+					var wpadminbar = 0;
+
+					if ($('#wpadminbar').length != 0) {
+						wpadminbar =+ $('#wpadminbar').outerHeight();
+					}
+
+					var targetoffset = target.offset().top - wpadminbar;
+
+					$('html,body').animate({
+						scrollTop: targetoffset
+					}, 250);
+
+					return false;
+
+				}
+
+			} else {
+
+				e.preventDefault();
+
+			}
+
+		});
+
+
+
 	});
 
 	$(window).resize(function() {
 	  setHeights();
-	});
-
-
-	$(function() {
-
-	  $('a[href*=#]:not([href=#])').click(function() {
-	    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-	      var target = $(this.hash);
-	      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-	      if (target.length) {
-
-			var wpadminbar = 0;
-
-			if ($('#wpadminbar').length != 0) {
-				wpadminbar =+ $('#wpadminbar').outerHeight();
-			}
-
-			var targetoffset = target.offset().top - wpadminbar;
-
-	        $('html,body').animate({
-	          scrollTop: targetoffset
-	        }, 250);
-	        return false;
-	      }
-	    }
-	  });
-
 	});
 
 })(jQuery);

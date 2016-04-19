@@ -1,6 +1,7 @@
 <style>
 
-.splash { position: fixed; top: 0; right: 0; bottom: 0; left: 0; }
+.splash { position: fixed; top: 0; right: 0; bottom: 0; left: 0; transition: background-color 0.5s ease; }
+.splash.loading {  background: #fff; }
 
 .splashinner { position: relative; }
 
@@ -10,7 +11,7 @@
 
 </style>
 
-<div class="splash">
+<div class="splash loading">
 	<div class="splashinner">
 		<div class="splashlogo"></div>
 	</div>
