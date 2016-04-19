@@ -20,11 +20,11 @@ add_image_size( 'thumb_jsa_2x', 780, 490, true );
 add_image_size( 'thumb_padmini', 1024, 646, true  );
 add_image_size( 'thumb_phone', 1136, 717, true  );
 
-add_image_size( 'carousel', 285, 141, true );
-add_image_size( 'carousel_padmini', 1024, 505, true  );
-add_image_size( 'carousel_phone', 1136, 560, true  );
-add_image_size( 'carousel_phoneplus', 1334, 658, true  );
-add_image_size( 'carousel_padretina', 2048, 1010, true  );
+add_image_size( 'carousel', 285, 121, true );
+add_image_size( 'carousel_padmini', 1024, 435, true  );
+add_image_size( 'carousel_phone', 1136, 483, true  );
+add_image_size( 'carousel_phoneplus', 1334, 567, true  );
+add_image_size( 'carousel_padretina', 2048, 870, true  );
 
 
 function spellerberg_this_sites_sizesets() {

@@ -1,4 +1,4 @@
-a/*
+/*
 Theme Name: Joel Sanders Architect
 Theme URI: http://github.com/everythingtype/jsa
 Author: Spellerberg Associates
@@ -11,7 +11,7 @@ Developed by Spellerberg Associates, http://www.spellerbergassociates.com/
 
 html { -webkit-text-size-adjust: 100%; }
 
-body:after{ display:none; content: url('images/nextarrow-white.svg') url('images/prevarrow-white.svg') url('images/nextarrow-grey.svg') url('images/prevarrow-grey.svg'); } /* Preload images*/
+body:after{ display:none; content: url('images/play-arrow-x2.png') url('images/play-arrow-x2-hover.png') url('images/nextarrow-grey.svg') url('images/prevarrow-grey.svg'); } /* Preload images*/
 
 body { font-family: "Calibre", sans-serif; font-weight: 400; font-size: 16px; line-height: 1.1818181818; letter-spacing: 0.02em; margin: 0; padding: 0; background: #fff; color: #000; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; }
 body.haslightbox { overflow: hidden; }
@@ -73,7 +73,7 @@ sup { font-size: 0.7272727273em; vertical-align: baseline; position: relative; b
 
 .topheader.scrolled { border-bottom: 1px solid #808284; }
 
-.topheader .topheadermargin { padding: 22px 29px 18px 29px; overflow: hidden; }
+.topheader .topheadermargin { padding: 19px 34px 11px 34px; overflow: hidden; }
 
 .topheader h1 { margin: 1px 0 0 0; float: left; line-height: 0; }
 .topheader h1 a { display: block; width: 80px; height: 35px; }
@@ -251,8 +251,8 @@ footer p { margin: 0 0 1em 0; }
 /* Homepage */
 
 .carousel { line-height: 0;  }
-.carousel-cell { width: 100%; overflow: hidden; position: relative; border-bottom: 2px solid #fff; }
-.carousel-cell a { display: block; width: 100%; background-size: cover; background-position: center center; padding-top: 49.31640625%; }
+.carousel-cell { width: 100%; overflow: hidden; position: relative; border-bottom: 3px solid #fff; }
+.carousel-cell a { display: block; width: 100%; background-size: cover; background-position: center center; padding-top: 42.513368984%; }
 
 .carousellabel { position: absolute; bottom: 20px; left: 30px; color: #fff; text-transform: uppercase; font-size: 26px; line-height: 0; }
 
@@ -562,24 +562,28 @@ a.slideanchor { position: relative; display: block; }
 
 a.nextslide { cursor: default; }
 
-.slide-video { line-height: 0; position: relative; }
-.slide-video .videomargin { margin: 0 25px; position: relative; width: 100%;  height: 100%; box-sizing: border-box; }
-.slide-video .videoimage { background-size: cover; background-position: center center; position: absolute; top: 12.5px; bottom: 12.5px; left: 0; right: 0; }
-.slide-video .playbutton { position: absolute; top: 0; bottom: 0; left: 0; right: 0; background: url(images/play-gray.svg) no-repeat center center;  background-size: 48px 48px; cursor: pointer; } 
-.slide-video .playbutton.hover { background-image: url(images/play-black.svg); }
+.slide-video { line-height: 0; position: relative; text-align: center; }
+
+
+.slide-video .covercontainer { display: none }
+
+
+.slide-video .videocontainer { position: relative; margin: 1em 25px 30px 25px; }
+.slide-video .videocontainer .ratio { padding-top: 56.25%; }
+
+.videocontainer iframe,
+.videocontainer object,
+.videocontainer embed { 
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
 
 .slide-bleed { padding-bottom: 12.5px; }
 .slide-bleed img { width: 100%; }
 
-
-
-@media screen and (min-width: 480px) { 
-	.slide-video .playbutton { background-size: 80px 80px; }
-}
-
-@media screen and (min-width: 768px) { 
-	.slide-video .playbutton { background-size: auto; }
-}
 
 @media screen and (min-width: 1120px) {
 
@@ -588,7 +592,7 @@ a.nextslide { cursor: default; }
 	.slide { display: flex; justify-content: center; align-items: center;  padding: 0; width: 100%; overflow: hidden; }
 	.slide img { margin: auto; box-sizing: border-box; }
 
-	.slide-standard img { padding: 50px 105px; } 
+	.slide-standard img { padding: 50px 104px; } 
 
 	.slide .slideinner { box-sizing: border-box; }
 	.slide .slideinner .next-slide { height: 100%; }
@@ -606,7 +610,14 @@ a.nextslide { cursor: default; }
 	.slide-bleed { padding-bottom: 50px; }
 	.slide-bleed img { width: 100%; }
 
-	.slide-video .videomargin { margin: 0 104px; }
+	.slide-video { }
+	.slide-video .covercontainer { cursor: pointer; display: block; position: absolute; top: 0; right: 0; bottom: 0; left: 0; background: #fff; }
+	.slide-video .covercontainer img { padding: 50px 104px; } 
+	.slide-video .playbutton { position: absolute; top: 0; bottom: 0; left: 0; right: 0; background: url("images/play-arrow-x2.png") no-repeat center center;  background-size: 151px 151px; cursor: pointer; } 
+	.slide-video .playbutton.hover { background-image: url("images/play-arrow-x2-hover.png"); }
+
+	.slide-video .videocontainer { position: absolute; top: 50px; bottom: 50px; left: 104px; right: 104px; }
+	.slide-video .videocontainer .ratio { padding-top: 0; }
 
 	a.nextslide { 
 	    cursor: pointer;

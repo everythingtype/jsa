@@ -22,6 +22,25 @@
 
 		<?php endif; ?>
 
+	<?php elseif ( $slide_layout == 'video' ) : ?>
+		<?php $embed = get_sub_field('embed'); ?>
+		<?php $image = get_sub_field('image'); ?>
+
+		<?php if ( $image && $embed ) : ?>
+			<div class="videocontainer">
+				<div class="ratio"></div>
+				<?php //echo do_shortcode('[fve]' . $embed . '[/fve]'); ?>
+				<?php echo $embed; ?>
+			</div>
+			<div class="covercontainer">
+			<?php 
+				$sizeguidance = '(min-width: 1024px) 2048px, 1024px';
+				spellerberg_the_image($image,'phoneplus',$sizeguidance); 
+			?>
+				<div class="playbutton"></div>
+			</div>
+		<?php endif; ?>
+
 	<?php else : ?>
 
 		<?php $image = get_sub_field('image'); ?>

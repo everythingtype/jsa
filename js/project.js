@@ -2,6 +2,24 @@
 
 (function($) {
 
+	jQuery.fn.hoverClass = function() {
+		if (/iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+			// Don't do
+		} else {
+			$(this).hover(function() {
+			    $(this).addClass('hover');
+			}, function() {
+			    $(this).removeClass('hover');
+			});
+		}
+	}
+
+	jQuery.fn.playYoutube = function() {
+		var slide = this.parents('.slide');
+		slide.find('iframe')[0].src += "&autoplay=1";
+		this.delay(300).fadeOut('slow');
+	}
+
 	jQuery.fn.setSlideHeight = function(contentheight) {
 
 		if ( projectIsLarge() ) {
@@ -109,10 +127,14 @@
 			readLess();
 		});
 
+		$('.covercontainer').on('click', function(e) {
+			$(this).playYoutube();
+			e.preventDefault();
+		});
+
+		$('.playbutton').hoverClass();
 
 		$('a.nextslide').click(function(e) {
-
-			console.log('hi there');
 
 			if ( projectIsLarge() ) {
 
