@@ -36,34 +36,62 @@
 						<p><a href="<?php echo $project_pdf; ?>">Download Project PDF</a></p>
 				<?php endif; ?>
 
-				<?php if( have_rows('project_info') ): ?>
-					<div class="projectmeta">
-					<?php while ( have_rows('project_info') ) : the_row(); 
-						$label = get_sub_field('label');
+				<?php $project_details_format = get_field('project_details_format'); 
+					if ( $project_details_format == 'predefined' ) : ?>
 
-						if ( $label == 'year' ) :
-							 $displaylabel = 'Year';
-						elseif ( $label == 'architect' ) :
-							 $displaylabel = 'Architect';
-						elseif ( $label == 'landscape' ) :
-							$displaylabel = 'Landscape Architect';
-						elseif ( $label == 'location' ) :
-							$displaylabel = 'Location';
-						elseif ( $label == 'size' ) :
-							 $displaylabel = 'Size';
-						elseif ( $label == 'scope' ) :
-							 $displaylabel = 'Scope';
-						endif;
+						<?php if( have_rows('project_info') ): ?>
+							<table class="projectmeta">
+							<?php while ( have_rows('project_info') ) : the_row(); 
+								$label = get_sub_field('label');
 
-						$value = get_sub_field('value'); ?>
-						<h3><?php echo $displaylabel; ?></h3>
-						<ul>
-							<li><?php echo $value; ?></li>
-						</ul>
-					<?php endwhile; ?>
-					</div>
-				<?php endif; ?>
+								if ( $label == 'year' ) :
+									 $displaylabel = 'Year';
+								elseif ( $label == 'architect' ) :
+									 $displaylabel = 'Architect';
+								elseif ( $label == 'associate' ) :
+									 $displaylabel = 'Associate Architect';
+								elseif ( $label == 'with' ) :
+									 $displaylabel = 'With';
+								elseif ( $label == 'landscape' ) :
+									$displaylabel = 'Landscape Architect';
+								elseif ( $label == 'structural' ) :
+									 $displaylabel = 'Structural Engineer';
+								elseif ( $label == 'mep' ) :
+									 $displaylabel = 'MEP Engineer';
+								elseif ( $label == 'photos' ) :
+									 $displaylabel = 'Photos';
+								elseif ( $label == 'location' ) :
+									$displaylabel = 'Location';
+								elseif ( $label == 'size' ) :
+									 $displaylabel = 'Size';
+								elseif ( $label == 'scope' ) :
+									 $displaylabel = 'Scope';
+								endif;
 
+								$value = get_sub_field('value'); ?>
+								<tr>
+									<th><?php echo $displaylabel; ?></th>
+									<td><?php echo $value; ?></td>
+								</tr>
+							<?php endwhile; ?>
+							</table>
+						<?php endif; ?>
+
+					<?php else : // Freeform ?>
+
+						<?php if( have_rows('project_details_freeform') ): ?>
+							<table class="projectmeta">
+								<?php while ( have_rows('project_details_freeform') ) : the_row();
+									$label = get_sub_field('label');
+									$value = get_sub_field('value'); ?>
+									<tr>
+										<th><?php echo $label; ?></th>
+										<td><?php echo $value; ?></td>
+									</tr>
+								<?php endwhile; ?>
+							</table>
+						<?php endif; ?>
+					<?php endif; ?>
 			</div>
 
 			<?php $i++; ?>

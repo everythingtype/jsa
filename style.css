@@ -318,9 +318,8 @@ footer p { margin: 0 0 1em 0; }
 .projectdescription a.readtoggle {cursor: pointer;}
 
 .projectmeta { margin: 0 0 66px 0;  }
-.projectmeta h3 { margin: 1em 0 0 0; font-size: 16px; font-weight: 400; }
-.projectmeta ul { margin: 0 0 1em 0; padding: 0; list-style: none; }
-.projectmeta li { margin: 0; padding: 0; }
+.projectmeta th { font-size: 16px; font-weight: 400; text-align: left; padding-right: 1em; }
+.projectmeta td { }
 .projectmeta a { color: #808284; }
 
 .projectscats { color: #808284; padding: 0 0 13px 0; }
@@ -356,8 +355,8 @@ footer p { margin: 0 0 1em 0; }
 	.projectdescription { width: 50%; float: left; padding-right: 15px; padding-bottom: 75px; margin: 0; box-sizing: border-box; }
 
 	.projectmeta { margin: 2em 0 0 0; }
-	.projectmeta h3 { margin: 0; font-size: 22px; width: 120px; float: left; clear: left;}
-	.projectmeta ul { margin: 0; float: left; }
+	.projectmeta th { font-size: 22px; min-width: 120px; }
+	.projectmeta ul { }
 
 	.projectscats { float: left; padding: 10px 0 13px 0; margin: 0.83em 0 0.83em 1em;}
 
