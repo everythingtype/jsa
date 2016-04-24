@@ -20,8 +20,9 @@ get_header(); ?>
 				setup_postdata( $post );
 
 //				print_r($post);
+				$postStatus = $post->post_status;
 
-				get_template_part('parts/griditem');
+				if ( $postStatus == 'publish' ) get_template_part('parts/griditem');
 
 				wp_reset_postdata();
 
