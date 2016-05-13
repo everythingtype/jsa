@@ -482,7 +482,7 @@ footer p { margin: 0 0 1em 0; }
 .socialmedia li { margin: 0; padding: 0; }
 
 .postgallery { line-height: 1; }
-.postimage { position: relative; text-align: center; background: #000; margin-bottom: 2px; width: 100%; }
+.postimage { position: relative; text-align: center; background: #fff; margin-bottom: 2px; width: 100%; }
 .postimage .ratio { padding-bottom: 55%; } 
 .postimage .inner { position: absolute; top: 0; right: 0; bottom: 0; left: 0; display: flex; justify-content: center; align-items: center; }
 .postimage img { max-height: 100%; }
