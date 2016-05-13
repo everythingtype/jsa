@@ -11,7 +11,7 @@ Developed by Spellerberg Associates, http://www.spellerbergassociates.com/
 
 html { -webkit-text-size-adjust: 100%; }
 
-body:after{ display:none; content: url('images/play-arrow-x2.png') url('images/play-arrow-x2-hover.png') url('images/nextarrow-grey.svg') url('images/prevarrow-grey.svg'); } /* Preload images*/
+body:after{ display:none; content: url('images/play-arrow-x2.png') url('images/play-arrow-x2-hover.png') url('images/nextarrow-grey.svg') url('images/prevarrow-grey.svg') url('images/nextarrow-black.svg') url('images/prevarrow-black.svg'); } /* Preload images*/
 
 body { font-family: "Calibre", sans-serif; font-weight: 400; font-size: 16px; line-height: 1.1818181818; letter-spacing: 0.02em; margin: 0; padding: 0; background: #fff; color: #000; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; }
 body.haslightbox { overflow: hidden; }
@@ -502,10 +502,10 @@ footer p { margin: 0 0 1em 0; }
 .postgallery .flickity-prev-next-button svg { display: none; }
 
 .postgallery .flickity-prev-next-button.previous { background-image: url('images/prevarrow-grey.svg');  }
-.postgallery .flickity-prev-next-button.previous:hover { background-image: url('images/prevarrow-white.svg'); }
+.postgallery .flickity-prev-next-button.previous:hover { background-image: url('images/prevarrow-black.svg'); }
 
 .postgallery .flickity-prev-next-button.next { background-image: url('images/nextarrow-grey.svg'); }
-.postgallery .flickity-prev-next-button.next:hover { background-image: url('images/nextarrow-white.svg'); }
+.postgallery .flickity-prev-next-button.next:hover { background-image: url('images/nextarrow-black.svg'); }
 
 @media screen and (min-width: 1120px) {
 	.indextemplate { margin: 80px 0 0 0 ; }
