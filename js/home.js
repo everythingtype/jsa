@@ -45,10 +45,10 @@
 
 		}
 
-		$('body').removeClass('haslightbox');
-
 		$(this).slideUp(1000, function() {
 			// Complete
+			$('body').removeClass('haslightbox');
+
 			if ( !homeIsMobile() ) { 
 				window.history.replaceState("", "Home", "/home/");
 			}

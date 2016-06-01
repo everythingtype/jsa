@@ -281,7 +281,7 @@ footer p { margin: 0 0 1em 0; }
 	.homepage .downlink {display: block; position: absolute; bottom: 33px; width: 50px; right: calc( 50% - 25px ); text-align: center; z-index: 50; font-family: 'Icons'; }
 	.homepage .downlink a {  font-size: 42px;  color: #fff; }
 
-	#mission { position: relative; }
+	#mission { position: relative; display: block; }
 
 }
 
